@@ -15,8 +15,8 @@
 	<script src="../js/bootstrap.min.js"></script>
 
    <link rel="Stylesheet" type="text/css" href="home.css">
-<link rel="Stylesheet" type="text/css" href="../homebar.css">
-<link rel="Stylesheet" type="text/css" href="../chat.css">
+<link rel="Stylesheet" type="text/css" href="../css/homebar.css">
+<link rel="Stylesheet" type="text/css" href="../css/chat.css">
   <link rel="shortcut icon" url("srcimg/cherry.png")/>
         <br>
 
@@ -79,8 +79,7 @@
                     <div class="user-pad">
                         <h3>Welcome back, Jessica</h3>
                         <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
-                        <h4 class="white"><i class="fa fa-twitter"></i> CoolesOCool</h4>
-                      
+                        <h4 class="white"><i class=""></i> Age 17</h4>
                         <button type="button" class="btn btn-info" href="#">
                         <span><i class="glyphicon glyphicon-user"></i></span></button>
                         <button type="button" class=" btn btn-info" href="#">
@@ -95,7 +94,7 @@
                     </div>
                 </div>
             </div>
-              <h3>Interests/ bio ¯\_(ツ)_/¯</h3>
+              <h3>Interests/ bifdsfweo ¯\_(ツ)_/¯</h3>
      <!--       <div class="row overview">
   
             </div> -->
@@ -104,7 +103,6 @@
     </div>
 </div>
 
-<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">  
 <div class="container">
     <div class="user-menu-container  "> <!--  square row-->
         <div class="col-md-7 user-details">

@@ -20,7 +20,8 @@
 
     //Users table
     $pdo->query("USE matcha_db");
-    $err = $pdo->query('CREATE TABLE `Users` ('. 
+    $err = $pdo->query('CREATE TABLE `Users` ('.
+    "UID INT NOT NULL AUTO_INCREMENT UNIQUE,". 
     "Username VARCHAR( 32 ) PRIMARY KEY NOT NULL,". 
     "password VARCHAR( 155 ) NOT NULL,". 
     "email VARCHAR( 64 ) NOT NULL,". 

@@ -26,6 +26,9 @@
      {
          echo"working";
          $_SESSION['logged_on_user'] = $user;
+         $stmt= $pdo("UPDATE `users` SET `Logged` = TRUE WHERE `Username` = :user");
+         $stmt->bindParam(":user", $user);
+         $stmt->execute();
           header("Location: ../homepage/home.php");
      }
      else

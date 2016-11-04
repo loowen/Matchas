@@ -118,6 +118,6 @@ echo" prepare ";
     echo"$sexpref";
     $stmt->execute();
 echo"profile";
-header("Location: homepage/home.php");
+header("Location: ../homepage/home.php");
 echo "Records added successfully.\n";
 ?> 

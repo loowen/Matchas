@@ -32,7 +32,9 @@
     "SexualPref INT NOT NULL,". 
     "ProfViews INT,". 
     "FameRating INT," . 
-    "GPS DECIMAL(9,6)". 
+    "GPS DECIMAL(9,6),".
+    "Logged INT,".
+    "LastLog DATETIME". 
     ")");
     if($err == false)
     {
@@ -44,7 +46,7 @@
     $err = $pdo->query('CREATE TABLE `Pictures` ('. 
     "PicID VARCHAR(155) PRIMARY KEY NOT NULL,". 
     "Username VARCHAR(32) NOT NULL,".
-    "FOREIGN KEY (Username) REFERENCES Users (Username)". 
+    "ProfPic BOOLEAN NOT NULL".
     ")");
     if ($err == false)
     {
@@ -76,10 +78,12 @@
         die("BAD 5");
     }
     echo"PROFVIEWS!!!";
+
+    //Interests
     $pdo->query("USE matcha_db");
     $err = $pdo->query('CREATE TABLE `Interests` ('. 
     "`User` VARCHAR(32) NOT NULL,". 
-    "`Interests` TEXT,".
+    "`Interests` VARCHAR(32),".
     "FOREIGN KEY (User) REFERENCES Users (Username)". 
     ")");
     echo"FINISHED";

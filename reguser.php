@@ -2,16 +2,16 @@
 
 include "bckend/connect.php";
 
-$email = /*$_POST['email']*/ "hamlynluke@gmail.com";
-$username = /*$_POST['username']*/"loowen";
-if($password = /*$_POST['pword']*/"15hamllu")
+$email = $_POST['email'];
+$username = $_POST['username'];
+if($password = $_POST['pword'])
 {
     echo"worked";
 }
 else{
     header("Location: index.html?err=11");
 }
-if($age = /*$_POST['age']*/ 19)
+if($age = $_POST['age'])
 {
     echo"found";
 }
@@ -19,7 +19,7 @@ else
 {
     header("Location: index.html?err=11");
 }
-if($gender = /*$_POST['gender']*/1)
+if($gender = $_POST['gender'])
 {
     echo"found";
 }
@@ -27,7 +27,7 @@ else
 {
     header("Location: index.html?err=9");
 }
-if($sexpref= /*$_POST['sexpref']*/3)
+if($sexpref= $_POST['sexpref'])
 {
     echo"found";
 }
@@ -35,8 +35,8 @@ else
 {
     header("Location: index.html?err=10");
 }
-$first=/*$_POST['first']*/"luke";
-$last=/*$_POST['last']*/"hamlyn";
+$first=$_POST['first'];
+$last=$_POST['last'];
 $hshed = hash("whirlpool", $password);
 
 echo "user = $username  pass = $hshed <br>";
@@ -71,7 +71,7 @@ if (strlen($username) < 6)
     header("Location: index.html?err=3");
 }
 echo"1";
-if ($password != /*$_POST['conf']*/"15hamllu")
+if ($password != $_POST['conf'])
 {
     echo "ERROR";
     header("Location: index.html?err=4");

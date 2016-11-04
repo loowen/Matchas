@@ -1,5 +1,5 @@
 <?php
-    include"connect.php";
+    include"bckend/connect.php";
     session_start();
     $user = $_POST['username'];
     $pword = hash("whirlpool",$_POST['pword']);
@@ -9,7 +9,7 @@
     
     $pdo = connect();
     $pdo->query("USE matcha_db");
-
+    echo"query";
     $stmt = $pdo->prepare("SELECT `password` FROM `users` WHERE Username = :username");
     $stmt->bindParam(':username', $user);
     $stmt->execute();

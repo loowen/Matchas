@@ -51,7 +51,7 @@ function uploadUserImage($user)
         $pdo = connect();
         
         date_default_timezone_set("Africa/Johannesburg");
-        $sql = $pdo->query("USE matcha_db");
+        $sql = $pdo->query("USE db_camagru");
         $stmt = $pdo->prepare("INSERT INTO imagetable (image_id, image_url , date_created, user) 
             VALUES (:image_id, :image_url, :date_created, :user)");
         $stmt->bindParam(':image_id', $name);

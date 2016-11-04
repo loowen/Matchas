@@ -1,5 +1,5 @@
 <?php
-    include"connect.php";
+    include"bckend/connect.php";
     session_start();
     $user = $_POST['username'];
     $pword = hash("whirlpool",$_POST['pword']);
@@ -8,9 +8,9 @@
     echo "pword = $pword<br>";
     
     $pdo = connect();
-    $pdo->query("USE db_camagru");
-
-    $stmt = $pdo->prepare("SELECT `password` FROM `usertable` WHERE username = :username");
+    $pdo->query("USE matcha_db");
+    echo"query";
+    $stmt = $pdo->prepare("SELECT `password` FROM `users` WHERE Username = :username");
     $stmt->bindParam(':username', $user);
     $stmt->execute();
     echo"stmt->rowCount()=".$stmt->rowCount();

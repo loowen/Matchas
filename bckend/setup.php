@@ -25,25 +25,14 @@
     "password VARCHAR( 155 ) NOT NULL,". 
     "email VARCHAR( 64 ) NOT NULL,". 
     "Firstname VARCHAR( 32 ) NOT NULL,". 
-    "Lastname VARCHAR( 32 ) NOT NULL".
-    ")");
-    if($err == false)
-    {
-        die("BAD 1");
-    }
-    echo"Users created ";
-    //profile table
-    $pdo->query("USE matcha_db");
-    $err = $pdo->query('CREATE TABLE `Profiles` ('.
-    "Username VARCHAR( 32 ) NOT NULL,".
+    "Lastname VARCHAR( 32 ) NOT NULL,".
     "Age INT NOT NULL,".
     "Gender INT NOT NULL,".
     "Bio TINYTEXT,". 
     "SexualPref INT NOT NULL,". 
     "ProfViews INT,". 
     "FameRating INT," . 
-    "GPS DECIMAL(9,6),". 
-    "FOREIGN KEY (Username) REFERENCES Users (Username)". 
+    "GPS DECIMAL(9,6)". 
     ")");
     if($err == false)
     {

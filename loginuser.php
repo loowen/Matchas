@@ -8,9 +8,9 @@
     echo "pword = $pword<br>";
     
     $pdo = connect();
-    $pdo->query("USE db_camagru");
+    $pdo->query("USE matcha_db");
 
-    $stmt = $pdo->prepare("SELECT `password` FROM `usertable` WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT `password` FROM `users` WHERE Username = :username");
     $stmt->bindParam(':username', $user);
     $stmt->execute();
     echo"stmt->rowCount()=".$stmt->rowCount();

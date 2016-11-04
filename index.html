@@ -25,22 +25,24 @@
 <div class="help">At least 6 characters</div>
 <input name="username" type="text">
 <label>First Name</label>
-<input name="username" type="text">
+<input name="first" type="text">
 <label>Last Name</label>
-<input name="username" type="text">
+<input name="last" type="text">
+<label>Email</label>
+<input name="email" type="text">
 <label style="width: 100%">Gender</label>
 
 <div class="container">	
   <ul>
   <li>
-    <input type="radio" id="a-option" name="selector">
+    <input type="radio" id="a-option" name="gender" value="1">
     <label for="a-option">Male</label>
     
     <div class="check"></div>
   </li>
   
   <li>
-    <input type="radio" id="b-option" name="selector">
+    <input type="radio" id="b-option" name="gender" value="2">
     <label for="b-option">Female</label>
     
     <div class="check"><div class="inside"></div></div>
@@ -54,21 +56,21 @@
 <div class="container">	
   <ul>
   <li>
-    <input type="radio" id="c-option" name="selector2">
+    <input type="radio" id="c-option" name="sexpref" value ="1">
     <label for="c-option">Male</label>
     
     <div class="check"></div>
   </li>
   
   <li>
-    <input type="radio" id="d-option" name="selector2">
+    <input type="radio" id="d-option" name="sexpref" value="2">
     <label for="d-option">Bisexual</label>
     
     <div class="check"><div class="inside"></div></div>
   </li>
   
   <li>
-    <input type="radio" id="e-option" name="selector2">
+    <input type="radio" id="e-option" name="sexpref" value="3">
     <label for="e-option">Female</label>
     
     <div class="check"><div class="inside"></div></div>
@@ -77,7 +79,7 @@
 </div>
 
 <label style="width: 100%">Age</label>
-<input name="username" type="number">
+<input name="age" type="number">
 
 <!--if($_GET["err"] == 1)
 {
@@ -89,7 +91,7 @@
 <input name="pword" type="password"/>
 <div class="help">Use upper and lowercase letters as well</div>
 <label> confirm Password</label>
-<input name="pword" type="password"/>
+<input name="conf" type="password"/>
 
 <a href="login.php" class="button" style="float:left; margin-left: 60px" type="submit" name="submit" value="OK" class="button">Login</a>
 

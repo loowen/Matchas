@@ -1,93 +1,123 @@
 <?PHP
 
-include "connect.php";
+include "bckend/connect.php";
 
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$age = $_POST['Age'];
-$gender = $_POST['Gend'];
-$sexpref= $_POST['Pref'];
-$first=$_POST['first'];
-$last=$_POST['last'];
+$email = /*$_POST['email']*/ "hamlynluke@gmail.com";
+$username = /*$_POST['username']*/"loowen";
+if($password = /*$_POST['pword']*/"15hamllu")
+{
+    echo"worked";
+}
+else{
+    header("Location: index.html?err=11");
+}
+if($age = /*$_POST['age']*/ 19)
+{
+    echo"found";
+}
+else
+{
+    header("Location: index.html?err=11");
+}
+if($gender = /*$_POST['gender']*/1)
+{
+    echo"found";
+}
+else
+{
+    header("Location: index.html?err=9");
+}
+if($sexpref= /*$_POST['sexpref']*/3)
+{
+    echo"found";
+}
+else
+{
+    header("Location: index.html?err=10");
+}
+$first=/*$_POST['first']*/"luke";
+$last=/*$_POST['last']*/"hamlyn";
 $hshed = hash("whirlpool", $password);
 
-echo "user = $username  pass $hshed <br>";
+echo "user = $username  pass = $hshed <br>";
 
 $pdo = connect();
-$pdo->query("USE db_camagru");
-
-$stmt = $pdo->prepare("SELECT `username` FROM `usertable` WHERE username = :username OR email = :email");
+echo"work?";
+$pdo->query("USE matcha_db");
+echo" query ";
+$stmt = $pdo->prepare("SELECT `Username` FROM `users` WHERE username = :username OR email = :email");
 $stmt->bindParam(':username', $username);
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 
 echo $stmt->rowCount();
+echo" work ";
+echo"1";
 if ($stmt->rowCount() > 0)
 {
     echo "ERROR";
-    header("Location: index.php?err=1");
+    header("Location: index.html?err=1");
 }
-
+echo"1";
 if (strlen($password) < 6)
 {
     echo "ERROR";
-    header("Location: index.php?err=2");
+    header("Location: index.html?err=2");
 }
-
+echo"1";
 if (strlen($username) < 6)
 {
     echo "ERROR";
-    header("Location: index.php?err=3");
+    header("Location: index.html?err=3");
 }
-
-if ($password != $_POST['confpass'])
+echo"1";
+if ($password != /*$_POST['conf']*/"15hamllu")
 {
     echo "ERROR";
-    header("Location: index.php?err=4");
+    header("Location: index.html?err=4");
 }
-
+echo"1";
 if(!isset($gender) || !isset($sexpref))
 {
-    header("Location: index.php?err=5");
+    header("Location: index.html?err=5");
 }
-
+echo"1";
 if($age < 18)
 {
-    header("Location: index.php?err=6");
+    header("Location: index.html?err=$age");
 }
-
-if (!pregmatch('/^([a-zA-Z0-9.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/', $email))
+echo"3";
+if (! preg_match('/^([a-zA-Z0-9.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/', $email))
 {
-    header("Location: /index.php?err=8");
+    header("Location: index.html?err=7");
 }
-
+echo"2";
 if(!isset($first) || !isset($last))
 {
-    header("Location: index.php?err=8");
+    header("Location: index.html?err=8");
 }
-
-$stmt = $pdo->prepare("INSERT INTO `users` ( `Username`, `password`, `email`, `Firstname`, `Lastname`)
-    VALUES (:username, :password, :email, :first, :last)");
+echo"checked";
+$stmt = $pdo->prepare("INSERT INTO `users` ( `Username`, `password`, `email`, `Firstname`, `Lastname`, `Age`, `Gender`, `SexualPref`)
+    VALUES (:username, :pword, :email, :first, :last, :age, :gender, :sexualpref)");
 echo" prepare ";
     $stmt->bindParam(':email', $email);
+    echo"$email";
     $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password',$hshed);
+    echo"$username";
+    $stmt->bindParam(':pword',$hshed);
+    echo"$hshed";
     $stmt->bindParam(':first',$first);
+    echo"$first";
     $stmt->bindParam(':last', $last);
-    echo" code ";
-    $stmt->execute();
-    echo" executed ";
-    $stmt=$pdo->query("INSERT INTO `profiles` ( `Username`, `Age`, `Gender`, `SexualPref`)
-        VALUES (:username, :age, :gender, :sexpref)");
-    $stmt->bindParam(':username', $username);
+    echo"$last";
     $stmt->bindParam(':age', $age);
+    echo"$age";
     $stmt->bindParam(':gender', $gender);
-    $stmt->bindParam(':sexpref', $sexpref);
+    echo"$gender";
+    $stmt->bindParam(':sexualpref', $sexpref);
+    echo"$sexpref";
     $stmt->execute();
-    $subject="Pic Snap Acc Verify";
-    $message="Please click the link to verify your account: http://localhost:8080/camagru/verify.php?name=$username&pword=$hshed&code=$code";
-    mail($email,$subject,$message);
+echo"profile";
 header("Location: login.php");
 echo "Records added successfully.\n";
 ?> 

@@ -1,6 +1,6 @@
 <?PHP
 
-include "bckend/connect.php";
+include "connect.php";
 
 $email = $_POST['email'];
 $username = $_POST['username'];
@@ -118,6 +118,6 @@ echo" prepare ";
     echo"$sexpref";
     $stmt->execute();
 echo"profile";
-header("Location: login.php");
+header("Location: homepage/home.php");
 echo "Records added successfully.\n";
 ?> 

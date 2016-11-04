@@ -1,5 +1,5 @@
 <?php
-    include"bckend/connect.php";
+    include"connect.php";
     session_start();
     $user = $_POST['username'];
     $pword = hash("whirlpool",$_POST['pword']);
@@ -26,7 +26,7 @@
      {
          echo"working";
          $_SESSION['logged_on_user'] = $user;
-          header("Location: index.php");
+          header("Location: ../homepage/home.php");
      }
      else
      {

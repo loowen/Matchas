@@ -29,7 +29,7 @@
          $stmt= $pdo("UPDATE `users` SET `Logged` = TRUE WHERE `Username` = :user");
          $stmt->bindParam(":user", $user);
          $stmt->execute();
-          header("Location: ../homepage/home.php");
+         header("Location: ../homepage/home.php");
      }
      else
      {

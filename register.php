@@ -19,7 +19,7 @@
     </ul>
     </nav>
     
-<form method="POST" action="backend/reguser.php">
+<form method="POST" action="reguser.php">
 <header>Register</header>
 
 <label>Username</label>

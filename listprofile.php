@@ -29,9 +29,9 @@
                     </div>
                 </div>
             </div>
-              <h3>$bio[$i]</h3>
+              <h3>Bio</h3>
      <!--       <div class='row overview'>
-  
+                $bio[$i]
             </div> -->
         </div>
    
@@ -53,6 +53,36 @@
         $pdo = null;
         return ($urls);
     }
+
+    function extract_firstn()
+    {
+        session_start();
+        /*$user = $_SESSION['logged_on_user']; */
+        $pdo = connect();
+        $pdo->query("USE db_matcha");
+        echo $user;
+        $stmt = $pdo->prepare("SELECT `usernames` FROM `imagetable` WHERE `user` = '$user'");
+        $stmt->execute();   
+        $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        $pdo = null;
+        return ($urls);
+    }
+
+    function extract_lastn()
+    {
+        session_start();
+        /*$user = $_SESSION['logged_on_user']; */
+        $pdo = connect();
+        $pdo->query("USE db_matcha");
+        echo $user;
+        $stmt = $pdo->prepare("SELECT `usernames` FROM `imagetable` WHERE `user` = '$user'");
+        $stmt->execute();   
+        $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        $pdo = null;
+        return ($urls);
+    }
+
+
 
     function extract_image_user()
     {

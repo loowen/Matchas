@@ -62,7 +62,24 @@
 
 
 
+<div id="block-modal" class="modal modal-wide fade">
+        <div class=""> <!-- modal-dialog  style="width: 90%"-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Block User</h4>
+                </div>
+                <div class="modal-body " id="chat">
 
+     
+                  
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+               <script>$( "#block" ).load( "../block.html" )</script>
 
 
 
@@ -86,6 +103,8 @@
                         <span><i class="glyphicon glyphicon-comment"></i></span></button>
                           <button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-thumbs-up"></i></span></button>
+                            <button data-dismiss="modal" data-toggle="modal" data-target="#block-modal" type="button" class="btn  btn-info" href="#">
+                        <span><i class="glyphicon glyphicon-ban-circle"></i></span></button>
                     </div>
                 </div>
                 <div class="col-md-6 no-pad">

@@ -1,7 +1,7 @@
 <?php
     $dbhost="mysql:host=127.0.0.1;";
     $dbuser="root";
-    $dbpass="JaLg2wV5";
+    $dbpass="15hamllu";
     try
     {
         $pdo = new PDO($dbhost, $dbuser, $dbpass);
@@ -86,6 +86,13 @@
     "`User` VARCHAR(32) NOT NULL,". 
     "`Interests` VARCHAR(32),".
     "FOREIGN KEY (User) REFERENCES Users (Username)". 
+    ")");
+
+    //Blocked
+    $pdo->query("USE matcha_db");
+    $err = $pdo->query('CREATE TABLE `blocked` ('. 
+    "`Blocker` INT NOT NULL,". 
+    "`Blocked` INT NOT NULL". 
     ")");
     echo"FINISHED";
 ?>

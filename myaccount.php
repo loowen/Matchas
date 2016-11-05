@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<!--   <?php
-  // session_start();
-   // if ($_SESSION['logged_on_user'] == "")
-   // header("Location: login.php");
-    ?> -->
+<?php
+  include"bckend/connect.php";
+  session_start();
+   if (!isset($_SESSION['logged_on_user']))
+   header("Location: login.php");
+
+?> 
 <title>Pic Snap :D</title>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -58,48 +60,48 @@
         </div>
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" method="POST" action="bckend/changes.php">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+              <input class="form-control" type="text" name="fname" value="Jane">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+              <input class="form-control" type="text" name="lname" value="Bishop">
             </div>
           </div>
    <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Example@gmail.com">
+              <input class="form-control" type="text" name="email" value="Example@gmail.com">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">User Profile:</label>
+            <label class="col-lg-3 control-label">Bio:</label>
             <div class="col-lg-8">
-              <input style="height: 200px" class="form-control" type="text" value="">
+              <input style="height: 200px" class="form-control" name="bio" type="text" value="">
             </div>
           </div>
-
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
+              <input class="form-control" type="text" name="uname" value="<?php session_start();
+              echo$_SESSION['logged_on_user']; ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" name="pass" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" name="confpass" value="">
             </div>
           </div>
           <div class="form-group">

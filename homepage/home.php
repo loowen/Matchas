@@ -24,7 +24,7 @@
 <br>
 </head>
 <body>
-
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
 <center><nav class="home">
     <ul>
     <li class="active"><a href="#home">Home</a></li>
@@ -60,16 +60,13 @@
                <script>$( "#chat" ).load( "../chat.html" )</script>
 
 
-
-
 <div id="block-modal" class="modal modal-wide fade">
-        <div class=""> <!-- modal-dialog  style="width: 90%"-->
-            <div class="modal-content">
+            <div class=" modal-dialog">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Block User</h4>
                 </div>
-                <div class="modal-body " id="chat">
+                <div class="modal-body " id="block">
 
      
                   
@@ -83,11 +80,23 @@
 
 
 
+
 <br></br>
 <br></br>
 <br></br>
 
-<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">  
+  
+
+
+
+<?php
+    include "../listprofile.php";
+
+    $data = extract_users();
+    userlist($data[0]);
+?>
+
+
 <div class="container">
     <div class="user-menu-container  "> <!--  square row-->
         <div class="col-md-7 user-details">
@@ -97,9 +106,11 @@
                         <h3>Welcome back, Jessica</h3>
                         <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
                         <h4 class="white"><i class=""></i> Age 17</h4>
-                        <button type="button" class="btn btn-info" href="#">
-                        <span><i class="glyphicon glyphicon-user"></i></span></button>
-                        <button type="button" class=" btn btn-info" href="#">
+                     <!--   <button type="button" class="btn btn-info" href="#"> -->
+                        <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
+                 <!--       <button type="button" class=" btn btn-info" href="#"> -->
+                 <span><i class="glyphicon glyphicon-user"></i></span></button>
+                  <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-comment"></i></span></button>
                           <button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-thumbs-up"></i></span></button>

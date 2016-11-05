@@ -14,7 +14,7 @@
 	<script src="js/bootstrap.min.js"></script>
 
    <link rel="Stylesheet" type="text/css" href="homepage/home.css">
-<link rel="Stylesheet" type="text/css" href="homebar.css">
+<link rel="Stylesheet" type="text/css" href="css/homebar.css">
   <link rel="shortcut icon" url("srcimg/cherry.png")/>
         <br>
 
@@ -120,7 +120,7 @@
 <footer>:D</footer>
 </section></center>
 
-<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
 </body>
 
 

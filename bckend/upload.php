@@ -1,5 +1,5 @@
 <?PHP
-include "connect.php";
+include_once "connect.php";
 
 function getImgName()
 {
@@ -23,8 +23,7 @@ function uploadUserImage($user)
 	$extpos = strrpos($name, ".", 0);
 	$ext = strtolower(substr($name, $extpos));
 	$newName = getImgName();
-	$path = "images/" . $newName;
-    file_put_contents("log.txt", "LOL");        
+	$path = "../images/" . $newName;
 	if ($ext != ".jpg" && $ext != ".jpeg" && $ext != ".png")
 	{
 		echo "ERROR: Only jpeg and png images are supported.";
@@ -32,10 +31,12 @@ function uploadUserImage($user)
 			unlink($tmpLoc);
 		exit;
 	}
+        file_put_contents("log.txt", "stuff");
+	
 	if(move_uploaded_file($tmpLoc, $path))
 	{
         file_put_contents("log.txt", "stuff");
-		//addImageDb($path, $newName, $user);
+		addImageDb($path, $newName, $user);
 	}
    	else
 	{
@@ -48,33 +49,27 @@ function uploadUserImage($user)
 
     function addImageDb($path, $name, $user)
     {
+		file_put_contents("log.txt", "$path, $name, $user");
         $pdo = connect();
-        
         date_default_timezone_set("Africa/Johannesburg");
-        $sql = $pdo->query("USE db_camagru");
-        $stmt = $pdo->prepare("INSERT INTO imagetable (image_id, image_url , date_created, user) 
-            VALUES (:image_id, :image_url, :date_created, :user)");
-        $stmt->bindParam(':image_id', $name);
-        $stmt->bindParam(':image_url', $path);
-        $date = date('Y-m-d H:i:s', time());
-        $stmt->bindParam(':date_created', $date);
+        $sql = $pdo->query("USE matcha_db");
+        $stmt = $pdo->prepare("INSERT INTO pictures (PicID, Username) 
+            VALUES (:pic_id, :user)");
+        $stmt->bindParam(':pic_id', $path);
         $stmt->bindParam(':user', $user);
         $stmt->execute();
-
         $pdo = null;
-
     }
 
     	session_start();
-        $user = "meck";
+        $user = $_SESSION['logged_on_user'];
 //	$user = $_SESSION['logged_on_user'];	
 //	if ($_SESSION['logged_on_user'] == "")
 //		exit;
-file_put_contents("log.txt", "HELLO");
 	if (file_exists('../images') == false)
 	{
 		echo "Directory not made, creating";
-		mkdir('images');
+		mkdir('../images');
 	}
 	if (isset($_FILES['user']))
 	{

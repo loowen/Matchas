@@ -7,6 +7,7 @@ function _(element)
 function userUpload()
 {
 	uploadFile(_("image1").files[0], "user" ,null);
+    document.querySelector("#image1").value = "";
     //location.reload();
 }
 
@@ -21,13 +22,12 @@ function uploadFile(file, key, name)
 		formdatas.append(key, file);
 	var ajax = new XMLHttpRequest();
 	ajax.addEventListener("load", completeHandler, false);
-	ajax.open("POST", "upload.php");
+	ajax.open("POST", "bckend/upload.php");
 	ajax.send(formdatas);
 }
 
 function completeHandler()
 {
-
 }
 
 $(document).ready(function() {

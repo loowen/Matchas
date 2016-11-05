@@ -21,7 +21,7 @@ function uploadFile(file, key, name)
 		formdatas.append(key, file);
 	var ajax = new XMLHttpRequest();
 	ajax.addEventListener("load", completeHandler, false);
-	ajax.open("POST", "upload.php");
+	ajax.open("POST", "bckend/upload.php");
 	ajax.send(formdatas);
 }
 

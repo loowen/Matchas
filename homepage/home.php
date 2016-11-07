@@ -64,7 +64,7 @@
             <div style="background: white"  class="">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 id="username" class="modal-title">ewfw</h4>
+                    <h4 id="username" class="modal-title">User Profile</h4>
                 </div>
                 <div class="modal-body " id="profile">
 
@@ -94,6 +94,35 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
                <script>$( "#block" ).load( "../block.html" )</script>
+<aside style="float:right">
+<form method="POST" action="bckend/reguser.php">
+<center><header>Search</header></center>
+
+<div class="container">	
+  <ul>
+  <li>
+    <input type="radio" id="a-option" name="gender" value="1">
+    <label for="a-option">Male</label>
+    
+    <div class="check"></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="b-option" name="gender" value="2">
+    <label for="b-option">Female</label>
+    
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  
+</ul>
+</div>
+</ul>
+</div>
+
+<label style="width: 100%">Age</label>
+<input name="age" type="number">
+</form>
+</aside>
 
 <br></br>
 <br></br>

@@ -10,7 +10,7 @@
 </head>
     <body>
 
-<form method="POST" action="loginuser.php">
+<form method="POST" action="bckend/loginuser.php">
 <header>Login</header>
 <label>Username</label>
 <input name="username" type="text">

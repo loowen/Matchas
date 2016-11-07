@@ -3,14 +3,12 @@
     function userlist($data)
     { 
         $count = count($data);
-        //print_r($data);
-        
        for($i = 0 ; $i < $count; $i++)
         {
             echo'
 
             <div class="container">
-    <div class="user-menu-container  "> <!--  square row-->
+    <div class="user-menu-container  ">
         <div class="col-md-7 user-details">
             <div class="row coralbg white">
                 <div class="col-md-6 no-pad">
@@ -18,7 +16,7 @@
                         <h3>'. $data[$i]['Firstname'] . ' ' . $data[$i]['Lastname'] . '</h3>
                         <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
                         <h4 class="white"><i class=""></i>Age ' . $data[$i]['Age'] .'</h4>
-                        <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
+                          <button onclick ="getProfile(\''. $data[$i]['Username'] .'\')" data-dismiss="modal" data-toggle="modal" data-target="#profile-modal" type="button" class="btn  btn-info href="#">
                  <span><i class="glyphicon glyphicon-user"></i></span></button>
                   <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-comment"></i></span></button>
@@ -30,7 +28,7 @@
                 </div>
                 <div class="col-md-6 no-pad">
                     <div class="user-image">
-                        <img src="' . $data[$i]['image'] .'" class="img-responsive thumbnail">
+                        <img id="userpfp' .  $i . '" src="' . $data[$i]['image'] .'" class="img-responsive thumbnail">
                     </div>
                 </div>
             </div>
@@ -42,25 +40,31 @@
    
     </div>
 </div>
-
             ';
         }
     }
 
 function extract_users()
 {
-        //session_start();
-        /*$user = $_SESSION['logged_on_user']; */
-        $pdo = connect();
-        $pdo->query("USE matcha_db");
-        //echo $user;
-        $stmt = $pdo->prepare("SELECT `username`,Firstname, Lastname, Age, Gender, Bio FROM `users`");
-        $stmt->execute(); 
-        while ( $row = $stmt->fetchAll(PDO::FETCH_ASSOC))
-        {
-            $data[] = $row;
-        } 
-        $pdo = null;
-        return ($data);
+    $i = 0;
+    $pdo = connect();
+    $pdo->query("USE matcha_db");
+    $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users`");
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $count = $stmt->rowCount();
+    while ($i < $count)
+    {
+        $stmt = $pdo->prepare("SELECT PicID FROM pictures WHERE Username = :user AND ProfPic = 1");
+        $stmt->bindParam(":user", $data[$i]['Username']);
+        $stmt->execute();
+        $img = $stmt->fetch(PDO::FETCH_ASSOC);
+        file_put_contents("loooog.txt", print_r($img, true));
+        $data[$i]['image'] = "../" . $img['PicID'];
+        $i++;
+    }
+    file_put_contents("loooog.txt", print_r($data, true));
+    $pdo = null;
+    return ($data);
 }
     ?>

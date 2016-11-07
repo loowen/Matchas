@@ -24,6 +24,7 @@ function uploadUserImage($user)
 	$ext = strtolower(substr($name, $extpos));
 	$newName = getImgName();
 	$path = "../images/" . $newName;
+	file_put_contents("loggggg.txt", $ext);
 	if ($ext != ".jpg" && $ext != ".jpeg" && $ext != ".png")
 	{
 		echo "ERROR: Only jpeg and png images are supported.";
@@ -31,11 +32,10 @@ function uploadUserImage($user)
 			unlink($tmpLoc);
 		exit;
 	}
-        file_put_contents("log.txt", "stuff");
-	
+
 	if(move_uploaded_file($tmpLoc, $path))
 	{
-        file_put_contents("log.txt", "stuff");
+		$path = substr($path, 3);
 		addImageDb($path, $newName, $user);
 	}
    	else
@@ -46,26 +46,35 @@ function uploadUserImage($user)
 	
 }
 
-
     function addImageDb($path, $name, $user)
     {
-		file_put_contents("log.txt", "$path, $name, $user");
         $pdo = connect();
         date_default_timezone_set("Africa/Johannesburg");
         $sql = $pdo->query("USE matcha_db");
-        $stmt = $pdo->prepare("INSERT INTO pictures (PicID, Username) 
-            VALUES (:pic_id, :user)");
+		
+		$stmt = $pdo->prepare("SELECT PicID FROM pictures WHERE Username = :user");
+        $stmt->bindParam(':user', $user);
+        $stmt->execute(); 
+		if ($stmt->rowCount() == 0)
+			$profPic = 1;
+		else 
+			$profPic = 0;
+		if ($stmt->rowCount() >= 5)
+			return;
+        $stmt = $pdo->prepare("INSERT INTO pictures (PicID, Username, ProfPic) 
+            VALUES (:pic_id, :user, :pp)");
         $stmt->bindParam(':pic_id', $path);
         $stmt->bindParam(':user', $user);
+		$stmt->bindParam(':pp', $profPic);
         $stmt->execute();
         $pdo = null;
     }
 
     	session_start();
         $user = $_SESSION['logged_on_user'];
-//	$user = $_SESSION['logged_on_user'];	
-//	if ($_SESSION['logged_on_user'] == "")
-//		exit;
+	$user = $_SESSION['logged_on_user'];	
+	if ($user == "")
+		exit;
 	if (file_exists('../images') == false)
 	{
 		echo "Directory not made, creating";
@@ -73,6 +82,7 @@ function uploadUserImage($user)
 	}
 	if (isset($_FILES['user']))
 	{
+		file_put_contents("Deanlog.txt", "path = $path");
 		uploadUserImage($user);	
 	}
 	else

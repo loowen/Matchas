@@ -40,7 +40,7 @@
 
 
 
-<div id="chat-modal" class="modal modal-wide fade">
+<div id="chat-modal" class="modal fade">
         <div class=""> <!-- modal-dialog  style="width: 90%"-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +60,24 @@
                <script>$( "#chat" ).load( "../chat.html" )</script>
 
 
-<div id="block-modal" class="modal modal-wide fade">
+<div id="profile-modal" class="modal modal-wide fade">
+            <div style="background: white"  class="">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="username" class="modal-title">ewfw</h4>
+                </div>
+                <div class="modal-body " id="profile">
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+           <script>$( "#profile" ).load( "./viewprofile.php" )</script>
+
+
+<div id="" class="modal modal-wide fade">
             <div class=" modal-dialog">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -78,98 +95,17 @@
     </div><!-- /.modal -->
                <script>$( "#block" ).load( "../block.html" )</script>
 
-
-
-
 <br></br>
 <br></br>
 <br></br>
 
-  
-
-
-
-<?php
+  <?php
     include "../listprofile.php";
 
     $data = extract_users();
-    userlist($data[0]);
+    userlist($data);
 ?>
 
-
-<div class="container">
-    <div class="user-menu-container  "> <!--  square row-->
-        <div class="col-md-7 user-details">
-            <div class="row coralbg white">
-                <div class="col-md-6 no-pad">
-                    <div class="user-pad">
-                        <h3>Welcome back, Jessica</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
-                        <h4 class="white"><i class=""></i> Age 17</h4>
-                     <!--   <button type="button" class="btn btn-info" href="#"> -->
-                        <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
-                 <!--       <button type="button" class=" btn btn-info" href="#"> -->
-                 <span><i class="glyphicon glyphicon-user"></i></span></button>
-                  <button data-dismiss="modal" data-toggle="modal" data-target="#profile" type="button" class="btn  btn-info" href="#">
-                        <span><i class="glyphicon glyphicon-comment"></i></span></button>
-                          <button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
-                        <span><i class="glyphicon glyphicon-thumbs-up"></i></span></button>
-                            <button data-dismiss="modal" data-toggle="modal" data-target="#block-modal" type="button" class="btn  btn-info" href="#">
-                        <span><i class="glyphicon glyphicon-ban-circle"></i></span></button>
-                    </div>
-                </div>
-                <div class="col-md-6 no-pad">
-                    <div class="user-image">
-                        <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">
-                    </div>
-                </div>
-            </div>
-              <h3>Interests/ bifdsfweo ¯\_(ツ)_/¯</h3>
-     <!--       <div class="row overview">
-  
-            </div> -->
-        </div>
-   
-    </div>
-</div>
-
-<div class="container">
-    <div class="user-menu-container  "> <!--  square row-->
-        <div class="col-md-7 user-details">
-            <div class="row coralbg white">
-                <div class="col-md-6 no-pad">
-                    <div class="user-pad">
-                        <h3>Welcome back, Jessica</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
-                        <h4 class="white"><i class="fa fa-twitter"></i> CoolesOCool</h4>
-                        <button type="button" class="btn btn-labeled btn-info" href="#">
-                            <span class="btn-label"><i class="fa fa-pencil"></i></span>Update</button>
-                    </div>
-                </div>
-                <div class="col-md-6 no-pad">
-                    <div class="user-image">
-                        <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">
-                    </div>
-                </div>
-            </div>
-            <div class="row overview">
-                <div class="col-md-4 user-pad text-center">
-                    <h3>FOLLOWERS</h3>
-                    <h4>2,784</h4>
-                </div>
-                <div class="col-md-4 user-pad text-center">
-                    <h3>FOLLOWING</h3>
-                    <h4>456</h4>
-                </div>
-                <div class="col-md-4 user-pad text-center">
-                    <h3>APPRECIATIONS</h3>
-                    <h4>4,901</h4>
-                </div>
-            </div>
-        </div>
-   
-    </div>
-</div>
 
 <br></br>
 <br></br>
@@ -177,6 +113,8 @@
 <footer>:D</footer>
 </section></center>
 
+<script type="text/javascript" src="../js/functions.js"></script>
+<script type="text/javascript" src="../js/getProfile.js"></script>
 </body>
 
 

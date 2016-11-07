@@ -1,1 +1,12 @@
-../images/IMG-581c86189e485.png, IMG-581c86189e485.png, meck
+Array
+(
+    [user] => Array
+        (
+            [name] => Mike0749.png
+            [type] => image/png
+            [tmp_name] => /goinfre/meckhard/MAMP/php/tmp/phpD8Rwo4
+            [error] => 0
+            [size] => 40082
+        )
+
+)

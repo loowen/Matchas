@@ -19,8 +19,16 @@
 
 <!-- <center><section> -->
 
+
 <form method="POST" action="bckend/reguser.php">
 <center><header>Register</header></center>
+<?php
+	$error = $_GET['err'];
+	echo"<div class='help' style='color:red;'>";
+    echo "Error code = $error";
+    echo"</div>"; // make pretty and add ifs
+?>
+
 <label>Username</label>
 <div class="help">At least 6 characters</div>
 <input name="username" type="text">
@@ -81,12 +89,14 @@
 <label style="width: 100%">Age</label>
 <input name="age" type="number">
 
-<!--if($_GET["err"] == 1)
+<!--
+if($_GET["err"] == 1)
 {
     echo"<div class='help' style='color:red;'>";
     echo"   Username or Password is incorrect";
     echo"</div>";
-}-->
+}
+-->
 <label>Password</label>
 <input name="pword" type="password"/>
 <div class="help">Use upper and lowercase letters as well</div>

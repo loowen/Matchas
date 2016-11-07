@@ -1,3 +1,8 @@
+  function goDoSomething(){       
+
+            alert("data-id:");
+        }
+
 function _(element)
 {
 	return (document.getElementById(element));
@@ -7,27 +12,27 @@ function _(element)
 function userUpload()
 {
 	uploadFile(_("image1").files[0], "user" ,null);
-    document.querySelector("#image1").value = "";
-    //location.reload();
 }
 
 function uploadFile(file, key, name)
 {
-    var formelem = document.querySelector("image_upload_form");
-	var	formdatas = new FormData(formelem);
-    console.log(formdatas.toString());
+    var formelem = document.querySelector("#image_upload_form");
+	var	formdata = new FormData(formelem);
+    console.log(formdata.toString());
 	if (name)
-		formdatas.append(key, file, name);
+		formdata.append(key, file, name);
 	else
-		formdatas.append(key, file);
+		formdata.append(key, file);
 	var ajax = new XMLHttpRequest();
 	ajax.addEventListener("load", completeHandler, false);
 	ajax.open("POST", "bckend/upload.php");
-	ajax.send(formdatas);
+	ajax.send(formdata);
 }
 
 function completeHandler()
 {
+	console.log("Done");
+    document.querySelector("#image1").value = "";
 }
 
 $(document).ready(function() {

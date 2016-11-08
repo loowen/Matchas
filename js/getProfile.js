@@ -32,7 +32,7 @@ function getProfile(user)
 	data = {}; //create POST array to send
 	
 	data.user = user; //add user key will be $_POST['user']
-	$.ajax("../bckend/getUserProfile.php", //tell it what sropt to run 
+	$.ajax("../bckend/getUserProfile.php", //tell it what script to run 
 	{
 		type : "POST", //data type
 		data : data, //actual data
@@ -50,4 +50,16 @@ function setProfile(data)
 	//console.log(data);
 	$("#name_surname").html(data.Firstname + " " + data.Lastname); //set innerHTML of #name_surname element
 	$("#user_bio").html("<strong>Bio: </strong><br>" + data.Bio);// You get the idea
+}
+
+function getLiked(user)
+{
+	data = {};
+
+	data.user = user;
+	$.ajax("../bckend/getLikes.php",
+	{
+		type : POST,
+		data : data
+	});
 }

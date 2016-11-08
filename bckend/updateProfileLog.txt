@@ -1,9 +1,9 @@
 Array
 (
-    [name] => michael
-    [surname] => eckhardt
-    [email] => meck@meck
-    [bio] => i like cheese and handcuffs <script> alert("HI") </script>
+    [name] => luke
+    [surname] => hamlyn
+    [email] => hamlynluke@gmail.com
+    [bio] => carmella dansen
     [passwd] => 
     [confpasswd] => 
 )

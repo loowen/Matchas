@@ -1,25 +1,3 @@
 Array
 (
-    [0] => Array
-        (
-            [Username] => deandt
-            [Firstname] => Dean
-            [Lastname] => du Toit
-            [Age] => 22
-            [Gender] => 1
-            [Bio] => 
-            [image] => ../
-        )
-
-    [1] => Array
-        (
-            [Username] => mike0748
-            [Firstname] => michael
-            [Lastname] => eckhardt
-            [Age] => 20
-            [Gender] => 1
-            [Bio] => i like cheese and handcuffs &lt;script&gt; alert(&quot;HI&quot;) &lt;/script&gt;
-            [image] => ../images/IMG-5820204d2a1e2.png
-        )
-
 )

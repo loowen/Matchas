@@ -131,11 +131,8 @@
   <?php
     include "../listprofile.php";
 
-    if($_GET['search'] < 1)
-    {
     $data = extract_users();
     userlist($data);
-    }
 ?>
 
 

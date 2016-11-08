@@ -1,8 +1,7 @@
  <?php    
-    include_once "../bckend/connect.php";
+    include_once "bckend/connect.php";
     function userlist($data)
     { 
-        session_start();
         $count = count($data);
        for($i = 0 ; $i < $count; $i++)
         {
@@ -19,12 +18,12 @@
                         <h4 class="white"><i class=""></i>Age ' . $data[$i]['Age'] .'</h4>
                           <button onclick ="getProfile(\''. $data[$i]['Username'] .'\')" data-dismiss="modal" data-toggle="modal" data-target="#profile-modal" type="button" class="btn  btn-info href="#">
                  <span><i class="glyphicon glyphicon-user"></i></span></button>';
-                  if($data[$i]['liked'] == 1)
-                  {
-                      echo'<button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
+                 if($data[$i]['liked'] == 1)
+                 {
+                        echo'<button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-comment"></i></span></button>';
                   }
-                         echo '<button data-dismiss="modal" onclick="getLiked(\''. $data[$i]['Username'].'\')"data-toggle="modal" data-target="#like" type="button" class="btn  btn-info" href="#">
+                         echo'<button data-dismiss="modal" onclick="getLiked(\''. $data[$i]['Username'].'\')"data-toggle="modal" data-target="#like" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-thumbs-up"></i></span></button>
                             <button data-dismiss="modal" data-toggle="modal" data-target="#block-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-ban-circle"></i></span></button>
@@ -48,10 +47,10 @@
         }
     }
 
-function extract_all_users()
+function extract_users()
 {
     session_start();
-    $user=$_SESSION['logged_on_user'];
+    $user = michael;
     $i = 0;
     $pdo = connect();
     $pdo->query("USE matcha_db");
@@ -71,7 +70,8 @@ function extract_all_users()
         $i++;
     }
     $i = 0;
-    $stmt = $pdo->prepare("SELECT * FROM ProfLikes WHERE UserLikes = :user AND Liker = :user ");
+    $stmt = $pdo->prepare("SELECT UserLiked, Liker FROM ProfLikes WHERE UserLiked = :user OR Liker = :users ");
+    $stmt->bindParam(":users", $user);
     $stmt->bindParam(":user", $user);
     $stmt->execute();
     $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -128,8 +128,9 @@ function extract_all_users()
                 }
            }
        }
+       $i++;
     }
-    file_put_contents("loooog.txt", print_r($data, true));
+    file_put_contents("y.txt", print_r($data, true));
     $pdo = null;
     return ($data);
 }

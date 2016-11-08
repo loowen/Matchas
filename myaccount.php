@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
 <?php
   include"bckend/connect.php";
   session_start();
    if (!isset($_SESSION['logged_on_user']))
    header("Location: login.php");
 ?> 
+<!DOCTYPE html>
+<html>
 <title>Pic Snap :D</title>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -43,7 +43,23 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img style="width : 80%" id="profpic" src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+<?php
+        $user = $_SESSION['logged_on_user'];
+        $pdo=connect();
+        $pdo->query("USE matcha_db");
+        $stmt = $pdo->query("SELECT PicID FROM Pictures WHERE Username = :user AND ProfPic = 1");
+        $stmt->bindParam(":user", $user);
+        $stmt->execute();
+        if($stmt->rowCount() != 1)
+        {
+          $str = "//placehold.it/100";
+        }
+        else
+        {
+          $str = $stmt->fetch(PDO::FETCH_COLUMN);
+        }
+        ?>
+          <img style="width : 80%" id="profpic" src="<?php echo $str ?>" class="avatar img-circle" alt="avatar">
           <h6>Upload a different photo...</h6>
 		  <form enctype="multipart/form-data" id="image_upload_form" method="post">
           <input id="image1" type="file" class="form-control">           

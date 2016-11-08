@@ -2,13 +2,14 @@ Array
 (
     [0] => Array
         (
-            [Username] => loowen
+            [Username] => michael
             [Firstname] => luke
             [Lastname] => hamlyn
             [Age] => 19
             [Gender] => 1
-            [Bio] => carmella dansen
-            [image] => ../images/IMG-58203de7b840c.png
+            [Bio] => 
+            [image] => ../
+            [liked] => 1
         )
 
 )

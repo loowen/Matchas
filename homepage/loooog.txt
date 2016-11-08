@@ -1,4 +1,0 @@
-Array
-(
-    [PicID] => images/IMG-58203de7b840c.png
-)

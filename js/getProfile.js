@@ -59,7 +59,7 @@ function getLiked(user)
 	data.user = user;
 	$.ajax("../bckend/getLikes.php",
 	{
-		type : POST,
+		type : "POST",
 		data : data
 	});
 }

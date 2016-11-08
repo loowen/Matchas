@@ -50,7 +50,7 @@
 function extract_users()
 {
     session_start();
-    $user = michael;
+    $user = $_SESSION['logged_on_user'];
     $i = 0;
     $pdo = connect();
     $pdo->query("USE matcha_db");
@@ -143,7 +143,7 @@ function search_users()
     $pdo->query("USE matcha_db");
     if($username != "")
     {
-        $stmt= $pdo->query("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` Where Username != :user AND Username = :userfind");
+        $stmt= $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` Where Username != :user AND Username = :userfind");
         $stmt->bindParam(":userfind", $userfind);
         $stmt->bindParam(":user", $user);
         $stmt->execute();

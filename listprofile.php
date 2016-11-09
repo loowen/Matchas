@@ -2,11 +2,13 @@
     include_once "bckend/connect.php";
     function userlist($data)
     { 
+        file_put_contents("loog.txt", print_r($data, true));
         $count = count($data);
        for($i = 0 ; $i < $count; $i++)
         {
-            if($data[$i]['blocked'] != 0)
-            {echo'
+            if($data[$i]['blocker'] != 1)
+            {
+                echo'
 
             <div class="container">
     <div class="user-menu-container  ">
@@ -51,12 +53,15 @@
 
 function extract_users()
 {
+    include_once"bckend/connect.php";
     session_start();
     $user = $_SESSION['logged_on_user'];
     $i = 0;
+    file_put_contents("loooog.txt", print_r($user, true));
     $pdo = connect();
     $pdo->query("USE matcha_db");
     $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user");
+    file_put_contents("loooog.txt", "work");
     $stmt->bindParam(":user", $user);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -139,9 +144,9 @@ function extract_users()
     $blocks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $count = $stmt->rowCount();
     $i = 0;
-   while ($i < $count && isset($count)) 
+   while ($i < $count) 
     {
-        /*if($blocks[$i]['Blocker'] != $user)
+        if($blocks[$i]['Blocker'] != $user)
         {
             $temp=$blocks[$i]['Blocker'];
             $x = 0;
@@ -149,7 +154,7 @@ function extract_users()
             {
                 if($data[$x]['Username'] == $temp)
                 {
-                    $data[$x]['blocked'] = 1;
+                    $data[$x]['blocker'] = 1;
                 }
                 $x++;
             }
@@ -162,13 +167,14 @@ function extract_users()
             {
                 if($data[$x]['Username'] == $temp)
                 {
-                    $data[$x]['blocked'] = 1;
+                    $data[$x]['blocker'] = 1;
                 }
                 $x++;
-           }*/
+           }
         $i++;
+        }
     }
-    file_put_contents("v.txt", print_r($data, true));
+    file_put_contents("loooog.txt", print_r($data, true));
     $pdo = null;
     return ($data);
 }

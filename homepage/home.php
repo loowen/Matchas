@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!--   <?php
-  // session_start();
-   // if ($_SESSION['logged_on_user'] == "")
-   // header("Location: login.php");
-    ?> -->
+
 <title>Pic Snap :D</title>
 <head>
 
@@ -38,7 +34,7 @@
 
 <header>
 
-<div class="container">
+<!--<div class="container">
 	<div class="row">
 		<div class="col-md-12">
             <div class="input-group" id="adv-search">
@@ -78,7 +74,7 @@
           </div>
         </div>
 	</div>
-</div>
+</div>-->
 
 
 </header>
@@ -139,7 +135,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
                <script>$( "#block" ).load( "../block.html" )</script>
-<!-- <aside>
+<!--<aside>
 <form method="POST" action="">
 <center><header></header></center>
 
@@ -169,13 +165,13 @@
 </form>
 
 
-</aside> -->
+</aside>-->
 
 <br></br>
 <br></br>
 <br></br>
 
-  <?php
+<?php
     include "../listprofile.php";
 
     $data = extract_users();

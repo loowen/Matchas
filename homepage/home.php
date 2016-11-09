@@ -36,7 +36,52 @@
     <br>
 <center><section>
 
+<header>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+            <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" placeholder="Search for Users" />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                    <label for="filter">Filter by</label>
+                                    <select class="form-control">
+                                        <option value="0" selected>All Users</option>
+                                        <option value="1">Liked Users</option>
+                                        <option value="2">Most popular</option>
+                                        <option value="3">Most compatible</option>
+                                        <option value="4">Age</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Interests</label>
+                                    <input class="form-control" type="text" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Keywords</label>
+                                    <input class="form-control" type="text" />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+	</div>
+</div>
+
+
+</header>
 
 
 
@@ -94,9 +139,9 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
                <script>$( "#block" ).load( "../block.html" )</script>
-<aside style="float:right">
-<form method="POST" action="bckend/reguser.php">
-<center><header>Search</header></center>
+<!-- <aside>
+<form method="POST" action="">
+<center><header></header></center>
 
 <div class="container">	
   <ul>
@@ -122,7 +167,9 @@
 <label style="width: 100%">Age</label>
 <input name="age" type="number">
 </form>
-</aside>
+
+
+</aside> -->
 
 <br></br>
 <br></br>

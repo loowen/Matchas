@@ -47,7 +47,7 @@
         $user = $_SESSION['logged_on_user'];
         $pdo=connect();
         $pdo->query("USE matcha_db");
-        $stmt = $pdo->query("SELECT PicID FROM Pictures WHERE Username = :user AND ProfPic = 1");
+        $stmt = $pdo->prepare("SELECT PicID FROM Pictures WHERE Username = :user AND ProfPic = 1");
         $stmt->bindParam(":user", $user);
         $stmt->execute();
         if($stmt->rowCount() != 1)

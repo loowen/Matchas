@@ -5,7 +5,8 @@
         $count = count($data);
        for($i = 0 ; $i < $count; $i++)
         {
-            echo'
+            if($data[$i]['blocked'] != 0)
+            {echo'
 
             <div class="container">
     <div class="user-menu-container  ">
@@ -23,9 +24,9 @@
                         echo'<button data-dismiss="modal" data-toggle="modal" data-target="#chat-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-comment"></i></span></button>';
                   }
-                         echo'<button data-dismiss="modal" onclick="getLiked(\''. $data[$i]['Username'].'\')"data-toggle="modal" data-target="#like" type="button" class="btn  btn-info" href="#">
+                         echo'<button data-dismiss="modal" onclick="getLiked(\''. $data[$i]['Username'].'\')" data-toggle="modal" data-target="#like" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-thumbs-up"></i></span></button>
-                            <button data-dismiss="modal" data-toggle="modal" data-target="#block-modal" type="button" class="btn  btn-info" href="#">
+                            <button data-dismiss="modal" onclick="getBlock(\''.$data[$i]['Username'].'\')" data-toggle="modal" data-target="#block-modal" type="button" class="btn  btn-info" href="#">
                         <span><i class="glyphicon glyphicon-ban-circle"></i></span></button>
                     </div>
                 </div>
@@ -44,6 +45,7 @@
     </div>
 </div>
             ';
+            }
         }
     }
 
@@ -130,7 +132,43 @@ function extract_users()
        }
        $i++;
     }
-    file_put_contents("y.txt", print_r($data, true));
+    $stmt = $pdo->prepare("SELECT Blocker, Blocked FROM blocked WHERE Blocker = :user OR Blocked = :users ");
+    $stmt->bindParam(":users", $user);
+    $stmt->bindParam(":user", $user);
+    $stmt->execute();
+    $blocks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $count = $stmt->rowCount();
+    $i = 0;
+   while ($i < $count && isset($count)) 
+    {
+        /*if($blocks[$i]['Blocker'] != $user)
+        {
+            $temp=$blocks[$i]['Blocker'];
+            $x = 0;
+            while($x < $count)
+            {
+                if($data[$x]['Username'] == $temp)
+                {
+                    $data[$x]['blocked'] = 1;
+                }
+                $x++;
+            }
+        }
+        elseif($blocks[$i]['Blocked'] != $user)
+        {
+            $temp=$blocks[$i]['Blocked'];
+            $x = 0;
+            while($x < $count)
+            {
+                if($data[$x]['Username'] == $temp)
+                {
+                    $data[$x]['blocked'] = 1;
+                }
+                $x++;
+           }*/
+        $i++;
+    }
+    file_put_contents("v.txt", print_r($data, true));
     $pdo = null;
     return ($data);
 }

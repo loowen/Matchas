@@ -91,8 +91,8 @@
     //Blocked
     $pdo->query("USE matcha_db");
     $err = $pdo->query('CREATE TABLE `blocked` ('. 
-    "`Blocker` INT NOT NULL,". 
-    "`Blocked` INT NOT NULL". 
+    "`Blocker` VARCHAR(32) NOT NULL,". 
+    "`Blocked` VARCHAR(32) NOT NULL". 
     ")");
     echo"FINISHED";
 ?>

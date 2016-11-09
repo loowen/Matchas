@@ -63,3 +63,15 @@ function getLiked(user)
 		data : data
 	});
 }
+
+function getBlock(user)
+{
+	data = {};
+
+	data.user = user;
+	$.ajax("../bckend/block.php",
+	{
+		type : "POST",
+		data : data
+	});
+}

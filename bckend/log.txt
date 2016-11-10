@@ -2,11 +2,11 @@ Array
 (
     [user] => Array
         (
-            [name] => Mike Template.png
-            [type] => image/png
-            [tmp_name] => /goinfre/meckhard/MAMP/php/tmp/phpuMKPiF
+            [name] => Michael Eckhardt.jpg
+            [type] => image/jpeg
+            [tmp_name] => /goinfre/meckhard/MAMP/php/tmp/phpwY7zno
             [error] => 0
-            [size] => 37746
+            [size] => 52407
         )
 
 )

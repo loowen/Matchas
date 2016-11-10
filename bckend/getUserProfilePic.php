@@ -10,6 +10,7 @@
 	$stmt = $pdo->prepare("SELECT PicID, ProfPic FROM pictures WHERE Username = :user");
 	$stmt->bindParam(":user", $logged_user);
 	$stmt->execute();
+	
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($data); //encode as JSON so javascript can decode it
 ?>

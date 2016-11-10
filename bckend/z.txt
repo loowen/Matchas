@@ -1,1 +1,16 @@
-not found
+Array
+(
+    [username] => loveperson
+    [email] => love@person
+    [Firstname] => Love
+    [Lastname] => Person
+    [Age] => 42
+    [Gender] => 2
+    [Bio] => HAF[oisjgirwj1
+    [SexualPref] => 1
+    [FameRating] => 
+    [ProfViews] => 
+    [GPS] => 
+    [LastLog] => 
+    [image] => images/IMG-582327c226e0b.png
+)

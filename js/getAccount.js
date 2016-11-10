@@ -13,7 +13,7 @@ function getAccountInfo()
 
 function getProfilePic()
 {
-	$.ajax("../bckend/getUserProfilePic.php",
+	$.ajax("bckend/getUserProfilePic.php",
 	{
 		success : function(data)
 		{

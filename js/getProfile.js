@@ -8,7 +8,7 @@ function getProfilePic()
 		// data will be whatever the phpscript echo'd
 			var json = jQuery.parseJSON(data);
 			setPic(json);
-		} 
+		}
 	});
 }
 
@@ -20,7 +20,7 @@ function setPic(data)
 		if (data[i].ProfPic == 1)
 		{
 			console.log("LOL", data[i].PicID);	
-			$("#popup_pfp").attr("src", "../" + data[i].PicID);
+			$("#popup_pic").attr("src", "../" + data[i].PicID);
 			break;
 		}
 		i++;
@@ -46,11 +46,11 @@ function getProfile(user)
 
 function setProfile(data)
 {
-	getProfilePic();
+//	getProfilePic();
 	console.log(data);
-	$("#name_surname").html(data.Firstname + " " + data.Lastname); //set innerHTML of #name_surname element
+	$("#name_surname_popup").html(data.Firstname + " " + data.Lastname); //set innerHTML of #name_surname element
 	$("#user_bio").html("<strong>Bio: </strong><br>" + data.Bio);// You get the idea
-	$("#popup_pfp").attr("src", data.PicID);
+	$("#popup_pic").attr("src", "../" + data.image);
 }
 
 function getLiked(user)

@@ -1,12 +1,8 @@
-
-<?php    
-            echo'
-
  <div class="container">
                 <div class="modal-body">
                     <center>
-                    <img id="popup_pfp" "src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 id="name_surname" class="media-heading">Joe Sixpack <small>USA</small></h3>
+                    <img id="popup_pic" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 id="name_surname_popup" class="media-heading">Joe Sixpack <small>USA</small></h3>
                     <span><strong>Skills: </strong></span>
                         <span class="label label-warning">Potatoes/CSS</span>
                         <span class="label label-info">Adobe CS 5.5</span>
@@ -28,15 +24,6 @@
                 </div>
             </div>
 </div>
-
-
-            ';
-
-
-
-    ?>
-
-
 
  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
  <div class="container">

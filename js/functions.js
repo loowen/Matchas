@@ -32,6 +32,7 @@ function uploadFile(file, key, name)
 function completeHandler()
 {
 	console.log("Done");
+    
     document.querySelector("#image1").value = "";
 }
 

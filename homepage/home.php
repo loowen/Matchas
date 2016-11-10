@@ -20,7 +20,7 @@
 <br>
 </head>
 <body>
-<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<!-- <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen"> -->
 <center><nav class="home">
     <ul>
     <li class="active"><a href="#home">Home</a></li>

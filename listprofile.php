@@ -136,6 +136,7 @@ function extract_users()
            }
        }
        $i++;
+
     }
     $stmt = $pdo->prepare("SELECT Blocker, Blocked FROM blocked WHERE Blocker = :user OR Blocked = :users ");
     $stmt->bindParam(":users", $user);
@@ -171,8 +172,8 @@ function extract_users()
                 }
                 $x++;
            }
-        $i++;
         }
+        $i++;
     }
     file_put_contents("loooog.txt", print_r($data, true));
     $pdo = null;

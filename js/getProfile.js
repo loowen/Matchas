@@ -47,9 +47,10 @@ function getProfile(user)
 function setProfile(data)
 {
 	getProfilePic();
-	//console.log(data);
+	console.log(data);
 	$("#name_surname").html(data.Firstname + " " + data.Lastname); //set innerHTML of #name_surname element
 	$("#user_bio").html("<strong>Bio: </strong><br>" + data.Bio);// You get the idea
+	$("#popup_pfp").attr("src", data.PicID);
 }
 
 function getLiked(user)

@@ -13,7 +13,7 @@ function getAccountInfo()
 
 function getProfilePic()
 {
-	$.ajax("bckend/getUserProfilePic.php",
+	$.ajax("../bckend/getUserProfilePic.php",
 	{
 		success : function(data)
 		{
@@ -48,5 +48,5 @@ function setAccount(data)
 	$("#last_name").val(data.Lastname);
 	$("#email").val(data.email);
 	$("#bio").val(data.Bio);
-	makeAlert("An - alert user me for errors", "#personal_div");
+
 }

@@ -1,9 +1,9 @@
 Array
 (
-    [name] => luke
-    [surname] => hamlyn
-    [email] => hamlynluke@gmail.com
-    [bio] => carmella dansen
+    [name] => Love
+    [surname] => Persone
+    [email] => love@person
+    [bio] => HAF[oisjgirwj1
     [passwd] => 
     [confpasswd] => 
 )

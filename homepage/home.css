@@ -294,7 +294,6 @@ div.user-menu div.user-menu-content:not(.active){
 }
 
 
-
 body {
     padding-top: 50px;
 }
@@ -337,4 +336,4 @@ body {
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 500px;
     }
-}
+} 

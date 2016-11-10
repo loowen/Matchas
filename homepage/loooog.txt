@@ -2,26 +2,24 @@ Array
 (
     [0] => Array
         (
-            [Username] => markus
-            [Firstname] => markus
-            [Lastname] => markus
-            [Age] => 18
-            [Gender] => 1
-            [Bio] => 
-            [image] => ../
-            [blocker] => 1
+            [Username] => loveperson
+            [Firstname] => Love
+            [Lastname] => Persone
+            [Age] => 42
+            [Gender] => 2
+            [Bio] => HAF[oisjgirwj1
+            [image] => ../images/IMG-582327c226e0b.png
         )
 
     [1] => Array
         (
-            [Username] => michael
-            [Firstname] => Michael
-            [Lastname] => Eckhardt
-            [Age] => 19
-            [Gender] => 1
+            [Username] => meckmeck
+            [Firstname] => Meck
+            [Lastname] => Meck
+            [Age] => 22
+            [Gender] => 2
             [Bio] => 
             [image] => ../
-            [liked] => 1
         )
 
 )

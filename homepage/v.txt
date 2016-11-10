@@ -2,11 +2,24 @@ Array
 (
     [0] => Array
         (
-            [Username] => michael
-            [Firstname] => luke
-            [Lastname] => hamlyn
-            [Age] => 19
-            [Gender] => 1
+            [Username] => deandt
+            [Firstname] => Deasn
+            [Lastname] => afsf
+            [Age] => 22
+            [Gender] => 2
+            [Bio] => 
+            [image] => ../
+            [liked] => 1
+            [blocked] => 1
+        )
+
+    [1] => Array
+        (
+            [Username] => meckmeck
+            [Firstname] => Meck
+            [Lastname] => Meck
+            [Age] => 22
+            [Gender] => 2
             [Bio] => 
             [image] => ../
             [liked] => 1

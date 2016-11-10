@@ -19,7 +19,11 @@ function updateProfile()
 		success : function(data){ // function that will run if request was successful- data 
 		// data will be whatever the phpscript echo'd
 			//var json = jQuery.parseJSON(data);
-			console.log("Status", data);
+			if (data.length > 0)
+			{
+				console.log("Status", data);	
+				makeAlert(data, "#personal_div");
+			}
 			getAccountInfo();
 		}
 	});

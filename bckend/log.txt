@@ -2,11 +2,11 @@ Array
 (
     [user] => Array
         (
-            [name] => bidorbuy-logo.png
+            [name] => Mike Template.png
             [type] => image/png
-            [tmp_name] => /goinfre/lhamlyn/MAMP/php/tmp/php9kin1I
+            [tmp_name] => /goinfre/meckhard/MAMP/php/tmp/phpuMKPiF
             [error] => 0
-            [size] => 25866
+            [size] => 37746
         )
 
 )

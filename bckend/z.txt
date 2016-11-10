@@ -1,16 +1,16 @@
 Array
 (
-    [username] => loveperson
-    [email] => love@person
-    [Firstname] => Love
-    [Lastname] => Person
-    [Age] => 42
+    [username] => meckmeck
+    [email] => meck@meck
+    [Firstname] => Meck
+    [Lastname] => Meck
+    [Age] => 22
     [Gender] => 2
-    [Bio] => HAF[oisjgirwj1
-    [SexualPref] => 1
+    [Bio] => 
+    [SexualPref] => 3
     [FameRating] => 
     [ProfViews] => 
     [GPS] => 
     [LastLog] => 
-    [image] => images/IMG-582327c226e0b.png
+    [image] => srcimg/avatar.png
 )

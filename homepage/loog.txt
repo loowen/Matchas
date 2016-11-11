@@ -2,24 +2,27 @@ Array
 (
     [0] => Array
         (
-            [Username] => loveperson
-            [Firstname] => Love
-            [Lastname] => Persone
-            [Age] => 42
-            [Gender] => 2
-            [Bio] => HAF[oisjgirwj1
-            [image] => ../images/IMG-582327c226e0b.png
+            [Username] => markus
+            [Firstname] => markus
+            [Lastname] => markus
+            [Age] => 18
+            [Gender] => 1
+            [Bio] => 
+            [image] => ../
+            [liked] => 1
+            [blocker] => 1
         )
 
     [1] => Array
         (
-            [Username] => meckmeck
-            [Firstname] => Meck
-            [Lastname] => Meck
-            [Age] => 22
-            [Gender] => 2
+            [Username] => michael
+            [Firstname] => Michael
+            [Lastname] => Eckhardt
+            [Age] => 19
+            [Gender] => 1
             [Bio] => 
             [image] => ../
+            [liked] => 1
         )
 
 )

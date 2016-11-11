@@ -66,6 +66,28 @@
           <input type="button" class="form-control" value="Upload Photo" onclick="userUpload()">
 		  </form>
         </div>
+        <div>
+        <div class="col-s-6 col-md-3">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" >
+          <img style="display:none;" id="pic0" src="" class="avatar img-circle" alt="">
+        </a>
+        </div>
+        <div class="col-s-6 col-md-3">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+          <img style="display:none;" id="pic1" src="" class="avatar img-circle" alt="">
+        </a>
+        </div>
+        <div class="col-s-6 col-md-3">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+          <img style="display:none;" id="pic2" src="" class="avatar img-circle" alt="">
+        </a>
+        </div>
+        <div class="col-s-6 col-md-3">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+          <img style="display:none;" id="pic3" src="" class="avatar img-circle" alt="">
+        </a>
+        </div>
+        </div>
       </div>
       
       <!-- edit form column -->

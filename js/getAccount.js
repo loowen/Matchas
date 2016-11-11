@@ -11,6 +11,31 @@ function getAccountInfo()
 	});
 }
 
+function getAllPics()
+{
+	$.ajax("bckend/getUserPics.php",
+	{
+		success : function(data)
+		{
+			var json = jQuery.parseJSON(data);
+			setAllPics(json); 
+			console.log("All", json);
+		}
+	});
+}
+
+function setAllPics(data)
+{
+	var i = 0;
+	while(i < data.length && i < 4)
+	{
+		console.log("tester","test");
+		$("#pic"+i).attr("src", data[i].PicID);
+		$("#pic"+i).show();
+		i++;
+	}
+}
+
 function getProfilePic()
 {
 	$.ajax("bckend/getUserProfilePic.php",
@@ -43,10 +68,12 @@ function makeAlert(message, prepend)
 function setAccount(data)
 {
 	getProfilePic();
+	getAllPics();
+	//getInterests();
 	console.log(data);
 	$("#first_name").val(data.Firstname); //set value of element
 	$("#last_name").val(data.Lastname);
 	$("#email").val(data.email);
 	$("#bio").val(data.Bio);
-
+	//$("#interests").val(data.Bio);
 }

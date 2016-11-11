@@ -9,6 +9,8 @@ function updateProfile()
 	console.log("bio=", data.bio);
 	data.passwd = $("#passwd").val();
 	data.confpasswd = $("#confpasswd").val();
+	data.interests = $("#interests").val();
+	console.log("interests=", data.interests);
 	
 	//Do some error checks first ??? 
 	

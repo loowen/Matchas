@@ -123,6 +123,11 @@
             <div class="col-lg-8">
               <textarea id="bio" maxlength="500" style="height: 200px" class="form-control" name="bio" type="text" value=""></textarea>
             </div>
+                      <div class="form-group">
+            <label class="col-lg-3 control-label">Interests:</label>
+            <div class="col-lg-8">
+              <textarea id="interests" maxlength="500" style="height: 100px" class="form-control" name="bio" type="text" value=""></textarea>
+            </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>

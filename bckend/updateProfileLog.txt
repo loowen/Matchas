@@ -1,9 +1,10 @@
 Array
 (
-    [name] => Dean
-    [surname] => du Toit
-    [email] => dean@live.co.za
-    [bio] => 
+    [name] => wanker
+    [surname] => wanker
+    [email] => wank@wank
+    [bio] => ehethethte
     [passwd] => 
     [confpasswd] => 
+    [interests] => weqwrewrqrwqwrtehwrhehwr
 )

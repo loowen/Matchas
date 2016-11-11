@@ -10,6 +10,7 @@
 	$bio = $_POST['bio'];
 	$passwd = $_POST['passwd'];
 	$confpasswd = $_POST['confpasswd'];
+	$interests = $_POST['interests'];
 	
 	$bio = htmlspecialchars($bio);
 	if (!$first || strlen($first) <= 0 || !preg_match('/^[A-Za-z0-9_-]+$/', $first))
@@ -56,6 +57,14 @@
 	//$stmt->bindParam(':age', $age);
     //$stmt->bindParam(':gender', $gender);
     //$stmt->bindParam(':sexualpref', $sexpref);
+
+	$stmt = $pdo->prepare("UPDATE `interests` SET 
+	 `Interests` = :Interests
+    WHERE User = :username");
+    $stmt->bindParam(':username', $user);
+    $stmt->bindParam(':Interests', $interests);
+    $stmt->execute();
+
 
     $stmt->execute();
 ?>

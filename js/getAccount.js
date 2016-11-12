@@ -17,6 +17,31 @@ function setIMGID(data)
 	$("#modalsrc").attr("src",src);
 }
 
+function deleteIMG()
+{
+	var src = $("#modalsrc").attr("src");
+	var i = 0;
+	while (i < 4)
+	{
+		if($("#pic"+i).attr("src") == src)
+		{
+			break;
+		}
+	}
+	$("#pic"+i).attr("src", null);
+	data = {};
+	data.src = src;
+	$.ajax("bckend/delIMG.php",
+	{
+		type : "POST",
+		data : data,
+		success : function(data)
+		{
+			getAccountInfo();
+		}
+	});
+}
+
 function getAllPics()
 {
 	$.ajax("bckend/getUserPics.php",
@@ -38,6 +63,11 @@ function setAllPics(data)
 		console.log("tester","test");
 		$("#pic"+i).attr("src", data[i].PicID);
 		$("#pic"+i).show();
+		i++;
+	}
+	while(i < 4)
+	{
+		$("#pic"+i).hide();
 		i++;
 	}
 }

@@ -65,10 +65,64 @@ function makeAlert(message, prepend)
          + message + '</div>');
 }
 
+function getInterests()
+{
+	$.ajax("bckend/getInterests.php",
+	{
+		success : function(data){ // function that will run if request was successful- data 
+		// data will be whatever the phpscript echo'd
+			var json = jQuery.parseJSON(data);
+			setInterests(json);
+		}
+	});
+}
+
+function deleteInterest(interest)
+{
+	data = {};
+
+	data.interest = interest;
+	$.ajax("bckend/deleteInterest.php",
+	{
+		type : "POST",
+		data : data,
+		success : function(data)
+		{ 
+		// function that will run if request was successful- data 
+		// data will be whatever the phpscript echo'd
+			getInterests();
+		}
+	});
+}
+
+function setInterests(data)
+{
+	var i = 0;
+
+	console.log("data = ", data);
+	var parent = document.querySelector("#interest_sub");
+	while (parent.firstChild) 
+        parent.removeChild(parent.firstChild);
+	while (i < data.length)
+	{
+	$("#interest" + i).remove();
+		$("#interest_sub").append('<a class="btn btn-default"'
+	 + 'id="interest' + i + '"'	
+	 +'><span class="glyphicon glyphicon-remove"></span>' 
+	 + data[i]
+	 + '</a>');
+	 $("#interest" + i).attr("onclick", "deleteInterest('" + data[i] + "');");
+	 //+ 'onclick="deleteInterest(' + data[i] + ')"';	
+		i++;
+	}
+
+}
+
 function setAccount(data)
 {
 	getProfilePic();
 	getAllPics();
+	getInterests();
 	//getInterests();
 	console.log(data);
 	$("#first_name").val(data.Firstname); //set value of element

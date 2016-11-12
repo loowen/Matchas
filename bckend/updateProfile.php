@@ -1,5 +1,4 @@
 <?php
-	file_put_contents("updateProfileLog.txt", print_r($_POST, true));
 
 
 	session_start();
@@ -58,13 +57,12 @@
     //$stmt->bindParam(':gender', $gender);
     //$stmt->bindParam(':sexualpref', $sexpref);
 
-	$stmt = $pdo->prepare("UPDATE `interests` SET 
-	 `Interests` = :Interests
-    WHERE User = :username");
+	/*$stmt = $pdo->prepare("INSERT INTO `interests` (
+		:Interests, :username)";
     $stmt->bindParam(':username', $user);
     $stmt->bindParam(':Interests', $interests);
     $stmt->execute();
-
+*/
 
     $stmt->execute();
 ?>

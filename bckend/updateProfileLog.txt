@@ -3,8 +3,7 @@ Array
     [name] => wanker
     [surname] => wanker
     [email] => wank@wank
-    [bio] => ehethethte
+    [bio] => qwdqwdsdsdsa
     [passwd] => 
     [confpasswd] => 
-    [interests] => weqwrewrqrwqwrtehwrhehwr
 )

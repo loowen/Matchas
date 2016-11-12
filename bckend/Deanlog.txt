@@ -1,1 +1,4 @@
-path = 
+Array
+(
+    [user] => michael
+)

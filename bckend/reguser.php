@@ -101,10 +101,11 @@ if(!isset($first) || !isset($last)
 }
 echo"checked";
 $stmt = $pdo->prepare("INSERT INTO `users` ( `Username`, `password`, `email`, `Firstname`, `Lastname`, `Age`, `Gender`, `SexualPref`)
-    VALUES (:username, :pword, :email, :first, :last, :age, :gender, :sexualpref)");
+    VALUES (:username, :pword, :email, :first, :last, :age, :gender, :sexualpref, :fame)");
 echo" prepare ";
     $stmt->bindParam(':email', $email);
     echo"$email";
+    $fame = 0;
     $stmt->bindParam(':username', $username);
     echo"$username";
     $stmt->bindParam(':pword',$hshed);
@@ -118,10 +119,10 @@ echo" prepare ";
     $stmt->bindParam(':gender', $gender);
     echo"$gender";
     $stmt->bindParam(':sexualpref', $sexpref);
+    $stmt->bindParam(":fame", $fame);
     echo"$sexpref";
     $stmt->execute();
 echo"profile";
-
 /*$stmt = $pdo->prepare("INSERT INTO `interests` ( `User`, `Interests`)
     VALUES (:User, :Interests)");
     $interests="";

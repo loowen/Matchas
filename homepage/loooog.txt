@@ -2,6 +2,17 @@ Array
 (
     [0] => Array
         (
+            [Username] => loowen
+            [Firstname] => luke
+            [Lastname] => hamlyn
+            [Age] => 19
+            [Gender] => 1
+            [Bio] => caramella dansen
+            [image] => ../images/IMG-582594af656cd.png
+        )
+
+    [1] => Array
+        (
             [Username] => markus
             [Firstname] => markus
             [Lastname] => markus
@@ -9,11 +20,9 @@ Array
             [Gender] => 1
             [Bio] => 
             [image] => ../
-            [liked] => 1
-            [blocker] => 1
         )
 
-    [1] => Array
+    [2] => Array
         (
             [Username] => michael
             [Firstname] => Michael
@@ -22,7 +31,6 @@ Array
             [Gender] => 1
             [Bio] => 
             [image] => ../
-            [liked] => 1
         )
 
 )

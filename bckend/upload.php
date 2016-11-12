@@ -43,7 +43,6 @@ function uploadUserImage($user)
 		echo "move_uploaded_file function failed";
 		exit;
 	}
-	
 }
 
     function addImageDb($path, $name, $user)

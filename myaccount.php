@@ -59,7 +59,7 @@
           $str = $stmt->fetch(PDO::FETCH_COLUMN);
         }
         ?>
-          <img style="width : 80%" id="profpic" src=""alt="avatar">
+          <img style="width : 80%" id="profpic" src="//placehold.it/100" alt="Upload a photo!">
           <h6>Upload a different photo...</h6>
 		  <form enctype="multipart/form-data" id="image_upload_form" method="post">
           <input id="image1" type="file" class="form-control">           

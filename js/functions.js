@@ -12,6 +12,7 @@ function _(element)
 function userUpload()
 {
 	uploadFile(_("image1").files[0], "user" ,null);
+    getAccountInfo();
 }
 
 function uploadFile(file, key, name)

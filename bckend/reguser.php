@@ -121,6 +121,14 @@ echo" prepare ";
     echo"$sexpref";
     $stmt->execute();
 echo"profile";
+
+/*$stmt = $pdo->prepare("INSERT INTO `interests` ( `User`, `Interests`)
+    VALUES (:User, :Interests)");
+    $interests="";
+    $stmt->bindParam(':User', $username);
+    $stmt->bindParam(':Interests', $interests);
+    $stmt->execute(); */
+
 header("Location: ../login.php");
 echo "Records added successfully.\n";
 ?> 

@@ -18,6 +18,7 @@
 	WHERE username = :user');
 	$stmt->bindParam(":user", $user); //want the userprofile of the one sent by Post
 	$stmt->execute(); // execute statement
+	
 	$data = $stmt->fetch(PDO::FETCH_ASSOC); // fetch data as associative array, dont need loop because we expect one result
 	$stmt = $pdo->prepare("SELECT PicID, ProfPic FROM pictures WHERE Username = :user");
 	$stmt->bindParam(":user", $user);

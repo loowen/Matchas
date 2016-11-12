@@ -1,0 +1,9 @@
+Array
+(
+    [name] => wanker
+    [surname] => wanker
+    [email] => wank@wank
+    [bio] => qwdqwdsdsdsa
+    [passwd] => 
+    [confpasswd] => 
+)

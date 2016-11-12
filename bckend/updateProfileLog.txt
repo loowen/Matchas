@@ -1,9 +1,0 @@
-Array
-(
-    [name] => Dean
-    [surname] => du Toit
-    [email] => dean@live.co.za
-    [bio] => 
-    [passwd] => 
-    [confpasswd] => 
-)

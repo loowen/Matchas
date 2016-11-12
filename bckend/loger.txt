@@ -1,15 +1,3 @@
 Array
 (
-    [0] => Array
-        (
-            [PicID] => images/IMG-58257b7372c37.png
-            [ProfPic] => 0
-        )
-
-    [1] => Array
-        (
-            [PicID] => images/IMG-58257b7d6a301.png
-            [ProfPic] => 0
-        )
-
 )

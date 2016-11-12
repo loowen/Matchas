@@ -22,7 +22,7 @@
                 <div class="col-md-6 no-pad">
                     <div class="user-pad">
                         <h3>'. $data[$i]['Firstname'] . ' ' . $data[$i]['Lastname'] . '</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
+                        <h4 class="white"><i class="fa fa-check-circle-o"></i> Fame :' . $data[$i]['FameRating'] . '</h4>
                         <h4 class="white"><i class=""></i>Age ' . $data[$i]['Age'] .'</h4>
                           <button onclick ="getProfile(\''. $data[$i]['Username'] .'\')" data-dismiss="modal" data-toggle="modal" data-target="#profile-modal" type="button" class="btn  btn-info href="#">
                  <span><i class="glyphicon glyphicon-user"></i></span></button>';
@@ -65,22 +65,7 @@ function extract_users()
     file_put_contents("loooog.txt", print_r($user, true));
     $pdo = connect();
     $pdo->query("USE matcha_db");
-    $stmt = $pdo->prepare("SELECT SexualPref FROM `users` WHERE Username = :user");
-    $stmt->bindParam(":user", $user);
-    $stmt->execute();
-    $pref = $stmt->fetch(PDO::FETCH_ASSOC);
-    if($pref = 3)
-    {
-    $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user");
-    }
-    elseif($pref = 2)
-    {
-        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 2");
-    }
-    elseif($pref = 1)
-    {
-        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 1");
-    }
+    $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio, FameRating FROM `users` WHERE Username != :user");
     file_put_contents("loooog.txt", "work");
     $stmt->bindParam(":user", $user);
     $stmt->execute();

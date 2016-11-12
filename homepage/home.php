@@ -37,8 +37,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-            <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" placeholder="Search for Users" />
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for Users" id="search" />
                 <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
@@ -48,8 +48,8 @@
                                   <div class="form-group">
                                     <label for="filter">Filter by</label>
                                     <select class="form-control">
-                                        <option value="0" selected>All Users</option>
-                                        <option value="1">Liked Users</option>
+                                        <option value="0" selected>User Name</option>
+                                        <option value="1">Name</option>
                                         <option value="2">Most popular</option>
                                         <option value="3">Most compatible</option>
                                         <option value="4">Age</option>
@@ -63,11 +63,12 @@
                                     <label for="contain">Keywords</label>
                                     <input class="form-control" type="text" />
                                   </div>
-                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                <!--  <input type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></input> -->
+                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" onclick="search()"></span></button>
                                 </form>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" onclick="search()"></span></button>
                     </div>
                 </div>
             </div>
@@ -75,11 +76,39 @@
         </div>
 	</div>
 </div>
+<br>
+<h2>Filters </h2>
+<div class="form-group">
+            <div class="col-lg-8">
+              <input placeholder="Age Minmum" id=age_min class="form-control" type="number" name="email" value="<?php echo $_GET['age_min'] ?>">
+            </div>
+</div>
+<div class="form-group">
+            <div class="col-lg-8">
+              <input placeholder="Age Maximum" id=age_max class="form-control" type="number" name="email" value="<?php echo $_GET['age_max'] ?>">
+            </div>
+</div>
+<div class="form-group">
+            <div class="col-lg-8">
+              <input placeholder="Fame Rating Min" id="fame_min" class="form-control" type="number" name="email" value="<?php echo $_GET['fame_min'] ?>">
+            </div>
+</div>
+<div class="form-group">
+            <div class="col-lg-8">
+              <input placeholder="Fame Rating Max" id="fame_max" class="form-control" type="number" name="email" value="<?php echo $_GET['fame_max'] ?>">
+            </div>
+</div>
+<div class="form-group">
+            <div class="col-lg-8">
+              <input placeholder="Interests - seperate with #" id="interest_filter" class="form-control" type="text" name="email" value="<?php echo $_GET['interests'] ?>">
+            </div>
+</div>
 
+<div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Apply Filter" onclick="search()">
+</div>
 
 </header>
-
-
 
 <div id="chat-modal" class="modal fade">
         <div class=""> <!-- modal-dialog  style="width: 90%"-->
@@ -185,8 +214,11 @@
 <footer>:D</footer>
 </section></center>
 
-<script type="text/javascript" src="../js/functions.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
+<script type="text/javascript" src="../js/getAccount.js"></script>
 <script type="text/javascript" src="../js/getProfile.js"></script>
+<script type="text/javascript" src="../js/functions.js"></script>
+
 </body>
 
 

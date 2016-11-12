@@ -1,0 +1,9 @@
+Array
+(
+    [search] => 
+    [age_min] => 22
+    [age_max] => 50
+    [fame_min] => 
+    [fame_max] => 
+    [interests] => 
+)

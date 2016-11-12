@@ -60,7 +60,22 @@ function extract_users()
     file_put_contents("loooog.txt", print_r($user, true));
     $pdo = connect();
     $pdo->query("USE matcha_db");
+    $stmt = $pdo->prepare("SELECT SexualPref FROM `users` WHERE Username = :user");
+    $stmt->bindParam(":user", $user);
+    $stmt->execute();
+    $pref = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($pref = 3)
+    {
     $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user");
+    }
+    elseif($pref = 2)
+    {
+        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 2");
+    }
+    elseif($pref = 1)
+    {
+        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 1");
+    }
     file_put_contents("loooog.txt", "work");
     $stmt->bindParam(":user", $user);
     $stmt->execute();

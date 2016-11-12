@@ -11,6 +11,12 @@ function getAccountInfo()
 	});
 }
 
+function setIMGID(data)
+{
+	var src = $("#pic"+data).attr("src");
+	$("#modalsrc").attr("src",src);
+}
+
 function getAllPics()
 {
 	$.ajax("bckend/getUserPics.php",
@@ -52,7 +58,9 @@ function getProfilePic()
 function setPics(data)
 {
 	// add loop to add more pics
+	
 	$("#profpic").attr("src", data.PicID);
+	console.log("tester","teste");
 }
 
 function makeAlert(message, prepend)
@@ -120,14 +128,15 @@ function setInterests(data)
 
 function setAccount(data)
 {
-	getProfilePic();
 	getAllPics();
 	getInterests();
 	//getInterests();
-	console.log(data);
 	$("#first_name").val(data.Firstname); //set value of element
 	$("#last_name").val(data.Lastname);
 	$("#email").val(data.email);
 	$("#bio").val(data.Bio);
+	$("#passwd").val("");
+	$("#confpasswd").val("");
+	getProfilePic();
 	//$("#interests").val(data.Bio);
 }

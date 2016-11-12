@@ -30,7 +30,7 @@
     <li><a href="./homepage/home.php">Home</a></li>
     <li><a href="./gallery.php">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
-     <li class="active"><a href="/../myaccount.php">Account</a></li>
+     <li class="active">Account</li>
   </ul>
 </nav></center>
 <br>
@@ -59,7 +59,7 @@
           $str = $stmt->fetch(PDO::FETCH_COLUMN);
         }
         ?>
-          <img style="width : 80%" id="profpic" src="<?php echo $str ?>" class="avatar img-circle" alt="avatar">
+          <img style="width : 80%" id="profpic" src=""alt="avatar">
           <h6>Upload a different photo...</h6>
 		  <form enctype="multipart/form-data" id="image_upload_form" method="post">
           <input id="image1" type="file" class="form-control">           
@@ -68,22 +68,22 @@
         </div>
         <div>
         <div class="col-s-6 col-md-3">
-        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" >
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" onclick=setIMGID(0)>
           <img style="display:none;" id="pic0" src="" class="avatar img-circle" alt="">
         </a>
         </div>
         <div class="col-s-6 col-md-3">
-        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" onclick=setIMGID(1)>
           <img style="display:none;" id="pic1" src="" class="avatar img-circle" alt="">
         </a>
         </div>
         <div class="col-s-6 col-md-3">
-        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" onclick=setIMGID(2)>
           <img style="display:none;" id="pic2" src="" class="avatar img-circle" alt="">
         </a>
         </div>
         <div class="col-s-6 col-md-3">
-        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#modalimg" onclick=setIMGID(3)>
           <img style="display:none;" id="pic3" src="" class="avatar img-circle" alt="">
         </a>
         </div>
@@ -92,8 +92,8 @@
 							<div class="modal-content">
 								<div class="modal-body">
 									<img id="modalsrc" src="" class="img-responsive">
-									<button id="delete" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modalimg">Delete</button>
-									<button id="setpfp" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modalimg">Set as profile pic</button>
+									<button id="delete" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modalimg" onclick=deleteIMG()>Delete</button>
+									<button id="setpfp" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modalimg" onclick=setProfIMG()>Set as profile pic</button>
 								</div>
 							</div>
 						</div>

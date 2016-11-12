@@ -11,7 +11,6 @@ function updateProfile()
 	data.confpasswd = $("#confpasswd").val();
 	
 	//Do some error checks first ??? 
-	
 	$.ajax("bckend/updateProfile.php", //tell it what sropt to run 
 	{
 		type : "POST", //data type
@@ -29,6 +28,24 @@ function updateProfile()
 	});
 }
 
+
+function setProfIMG()
+{
+	data={};
+
+	data.newIMG= $("#modalsrc").attr("src");
+	$.ajax("bckend/IMGSet.php",
+	{
+		type : "POST",
+		data : data,
+		success : function(data)
+		{
+			
+			getAccountInfo();
+			$("#profpic").attr("src", data.newIMG);
+		}
+	});
+}
 
 
 function addinterest()

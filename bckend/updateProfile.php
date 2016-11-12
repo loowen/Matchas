@@ -34,13 +34,22 @@
 		echo "ERROR : Invalid Email";
 		die();
 	}
+
+	if($passwd != $confpasswd)
+	{
+		echo "ERROR : Passwords Don't match";
+		die();
+	}
 	
 	include "connect.php";
 	
+	if(sizeof($passwd) >= 8)
+	{
 	$pdo = connect();
 	$pdo->query("USE matcha_db");
 	$stmt = $pdo->prepare(
-	"UPDATE `users` SET 
+	"UPDATE `users` SET
+	`password` = :pass, 
 	`email` = :email , 
 	`Firstname` = :first,
 	`Lastname` = :last,
@@ -52,7 +61,27 @@
     $stmt->bindParam(':last', $surname);
 	$stmt->bindParam(':bio', $bio);
 	$stmt->bindParam(':username', $user);
-
+	$passwd = hash("whirlpool",$passwd);
+	$stmt->bindParam(':pass', $passwd);
+	}
+	else
+	{
+	$pdo = connect();
+	$pdo->query("USE matcha_db");
+	$stmt = $pdo->prepare(
+	"UPDATE `users` SET
+	`email` = :email , 
+	`Firstname` = :first,
+	`Lastname` = :last,
+	`Bio` = :bio
+	WHERE `Username` = :username"
+	);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':first',$first);
+    $stmt->bindParam(':last', $surname);
+	$stmt->bindParam(':bio', $bio);
+	$stmt->bindParam(':username', $user);
+	}
 	//$stmt->bindParam(':age', $age);
     //$stmt->bindParam(':gender', $gender);
     //$stmt->bindParam(':sexualpref', $sexpref);

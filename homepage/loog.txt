@@ -2,57 +2,27 @@ Array
 (
     [0] => Array
         (
-            [Username] => deandt
-            [Firstname] => Dean
-            [Lastname] => du Toit
-            [Age] => 22
-            [Gender] => 2
-            [Bio] => i like cheese
-            [image] => ../images/IMG-5824466c87ee2.png
+            [Username] => markus
+            [Firstname] => markus
+            [Lastname] => markus
+            [Age] => 18
+            [Gender] => 1
+            [Bio] => 
+            [image] => ../
+            [liked] => 1
+            [blocker] => 1
         )
 
     [1] => Array
         (
-            [Username] => gazooooop
-            [Firstname] => nick
-            [Lastname] => wilde
-            [Age] => 20
+            [Username] => michael
+            [Firstname] => Michael
+            [Lastname] => Eckhardt
+            [Age] => 19
             [Gender] => 1
             [Bio] => 
             [image] => ../
-        )
-
-    [2] => Array
-        (
-            [Username] => loveperson
-            [Firstname] => Love
-            [Lastname] => Person
-            [Age] => 42
-            [Gender] => 2
-            [Bio] => HAF[oisjgirwj1
-            [image] => ../images/IMG-582327c226e0b.png
-        )
-
-    [3] => Array
-        (
-            [Username] => meckmeck
-            [Firstname] => Meck
-            [Lastname] => Meck
-            [Age] => 22
-            [Gender] => 2
-            [Bio] => 
-            [image] => ../
-        )
-
-    [4] => Array
-        (
-            [Username] => potatohead
-            [Firstname] => donald
-            [Lastname] => trump
-            [Age] => 70
-            [Gender] => 1
-            [Bio] => 
-            [image] => ../
+            [liked] => 1
         )
 
 )

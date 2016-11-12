@@ -1,6 +1,5 @@
 <?php
 	include "connect.php";
-	file_put_contents("Deanlog.txt", print_r($_POST, true));
 	
 	session_start();
 	$logged_user = $_SESSION['logged_on_user'];
@@ -28,6 +27,5 @@
 	else
 		$pic = "srcimg/avatar.png";
 	$data['image'] = $pic;
-	file_put_contents("z.txt", print_r($data, true));
 	echo json_encode($data); //encode as JSON so javascript can decode it
 ?>

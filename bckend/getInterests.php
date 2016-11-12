@@ -3,7 +3,6 @@
 
     session_start();
     $user = $_SESSION['logged_on_user'];
-    file_put_contents("INTERESAdAD.txt", "user = $user");    
 
     $pdo = connect();
 	$pdo->query("USE matcha_db");

@@ -12,6 +12,5 @@ include "connect.php";
 	$stmt->execute();
 	
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    file_put_contents("loger.txt", print_r($data, true));
     echo json_encode($data);
 ?>

@@ -9,7 +9,6 @@ function getImgName()
 
 function uploadUserImage($user)
 {
-    file_put_contents("log.txt", print_r($_FILES, true));    
 	$name = $_FILES['user']['name'];
 	$tmpLoc = $_FILES['user']['tmp_name'];
 	$type = $_FILES['user']['type'];
@@ -24,7 +23,6 @@ function uploadUserImage($user)
 	$ext = strtolower(substr($name, $extpos));
 	$newName = getImgName();
 	$path = "../images/" . $newName;
-	file_put_contents("loggggg.txt", $ext);
 	if ($ext != ".jpg" && $ext != ".jpeg" && $ext != ".png")
 	{
 		echo "ERROR: Only jpeg and png images are supported.";
@@ -81,7 +79,6 @@ function uploadUserImage($user)
 	}
 	if (isset($_FILES['user']))
 	{
-		file_put_contents("Deanlog.txt", "path = $path");
 		uploadUserImage($user);	
 	}
 	else

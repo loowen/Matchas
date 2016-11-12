@@ -1,6 +1,5 @@
 <?php
 	include "connect.php";
-	file_put_contents("Deanlog.txt", print_r($_POST, true));
 	
 	session_start();
 	$logged_user = $_SESSION['logged_on_user'];

@@ -1,5 +1,4 @@
 <?php
-   file_put_contents("search.txt", print_r($_POST, true));    
 
    $age_min = $_POST['age_min'];
    $age_max = $_POST['age_max'];
@@ -34,7 +33,6 @@
     session_start();
     $user = $_SESSION['logged_on_user'];
     $search = $_POST['search'];
-    file_put_contents("search.txt", "search = $search");    
 
     $pdo = connect();
 	$pdo->query("USE matcha_db");

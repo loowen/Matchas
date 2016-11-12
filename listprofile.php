@@ -2,7 +2,6 @@
     include_once "bckend/connect.php";
     function userlist($data)
     { 
-        file_put_contents("loog.txt", print_r($data, true));
         $count = count($data);
        for($i = 0 ; $i < $count; $i++)
         {
@@ -62,7 +61,6 @@ function extract_users()
     session_start();
     $user = $_SESSION['logged_on_user'];
     $i = 0;
-    file_put_contents("loooog.txt", print_r($user, true));
     $pdo = connect();
     $pdo->query("USE matcha_db");
     $stmt = $pdo->prepare("SELECT SexualPref FROM `users` WHERE Username = :user");
@@ -81,7 +79,6 @@ function extract_users()
     {
         $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 1");
     }
-    file_put_contents("loooog.txt", "work");
     $stmt->bindParam(":user", $user);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -92,7 +89,6 @@ function extract_users()
         $stmt->bindParam(":user", $data[$i]['Username']);
         $stmt->execute();
         $img = $stmt->fetch(PDO::FETCH_ASSOC);
-        file_put_contents("loooog.txt", print_r($img, true));
         $data[$i]['image'] = "../" . $img['PicID'];
         $i++;
     }
@@ -195,7 +191,6 @@ function extract_users()
         }
         $i++;
     }
-    file_put_contents("loooog.txt", print_r($data, true));
     $pdo = null;
     return ($data);
 }
@@ -229,7 +224,6 @@ function search_users()
         $stmt->bindParam(":user", $data[$i]['Username']);
         $stmt->execute();
         $img = $stmt->fetch(PDO::FETCH_ASSOC);
-        file_put_contents("loooog.txt", print_r($img, true));
         $data[$i]['image'] = "../" . $img['PicID'];
         $i++;
     }

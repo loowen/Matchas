@@ -94,5 +94,13 @@
     "`Blocker` VARCHAR(32) NOT NULL,". 
     "`Blocked` VARCHAR(32) NOT NULL". 
     ")");
+
+    //History
+    $pdo->query("USE matcha_db");
+    $err = $pdo->query('CREATE TABLE `history` ('. 
+    "`cliked` VARCHAR(32) NOT NULL,".
+    "`type` VARCHAR(155) NOT NULL," .
+    "`clickee` VARCHAR(32) NOT NULL". 
+    ")");
     echo"FINISHED";
 ?>

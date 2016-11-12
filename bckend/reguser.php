@@ -100,7 +100,7 @@ if(!isset($first) || !isset($last)
     header("Location: ../index.php?err=8");die();
 }
 echo"checked";
-$stmt = $pdo->prepare("INSERT INTO `users` ( `Username`, `password`, `email`, `Firstname`, `Lastname`, `Age`, `Gender`, `SexualPref`)
+$stmt = $pdo->prepare("INSERT INTO `users` ( `Username`, `password`, `email`, `Firstname`, `Lastname`, `Age`, `Gender`, `SexualPref`, `FameRating`)
     VALUES (:username, :pword, :email, :first, :last, :age, :gender, :sexualpref, :fame)");
 echo" prepare ";
     $stmt->bindParam(':email', $email);

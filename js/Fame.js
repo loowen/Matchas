@@ -6,7 +6,11 @@ function IncreaseFame(prof, type)
     $.ajax("bckend/increaseFame.php",
 	{
         type : "POST",
-		data : data
+		data : data,
+        success : function(data)
+        {
+            AddHistory(prof, type);
+        }
     });
 }
 
@@ -16,6 +20,18 @@ function AddHistory(prof, type)
     data.prof = prof;
     data.type = type;
     $.ajax("bckend/addHistory.php",
+    {
+        type : "POST",
+        data : data
+    });
+}
+
+function DelHistory(prof, type)
+{
+    data={};
+    data.prof = prof;
+    data.type = type;
+    $.ajax("bckend/DelHistory.php",
     {
         type : "POST",
         data : data

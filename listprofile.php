@@ -20,7 +20,7 @@
                 <div class="col-md-6 no-pad">
                     <div class="user-pad">
                         <h3>'. $data[$i]['Firstname'] . ' ' . $data[$i]['Lastname'] . '</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i> San Antonio, TX</h4>
+                        <h4 class="white"><i class=""></i>Fame ' . $data[$i]['FameRating'] .'</h4>
                         <h4 class="white"><i class=""></i>Age ' . $data[$i]['Age'] .'</h4>
                           <button onclick ="getProfile(\''. $data[$i]['Username'] .'\')" data-dismiss="modal" data-toggle="modal" data-target="#profile-modal" type="button" class="btn  btn-info href="#">
                  <span><i class="glyphicon glyphicon-user"></i></span></button>';

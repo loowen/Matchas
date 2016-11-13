@@ -21,12 +21,12 @@
     </ul>
     </nav>
     
-<form method="POST" action="bckend/loginuser.php">
+<form method="POST" action="bckend/resetpass.php">
 <header>Reset Password</header>
 <label>Enter email</label>
-<input name="username" type="text">
+<input name="email" type="text">
 <br></br>
-<center><a href="login.php" class="button" style="padding: 3px">Re-send email</a></cneter>
+<center><a class="button" style="padding: 3px">Re-send email</a></cneter>
 <br></br>
 </form>    
     

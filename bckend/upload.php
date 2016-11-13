@@ -49,7 +49,7 @@ function uploadUserImage($user)
         date_default_timezone_set("Africa/Johannesburg");
         $sql = $pdo->query("USE matcha_db");
 		
-		$stmt = $pdo->prepare("SELECT PicID FROM pictures WHERE Username = :user");
+		$stmt = $pdo->prepare("SELECT PicID FROM pictures WHERE Username = :user AND ProfPic = 1");
         $stmt->bindParam(':user', $user);
         $stmt->execute(); 
 		if ($stmt->rowCount() == 0)

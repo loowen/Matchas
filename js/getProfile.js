@@ -40,6 +40,23 @@ function getProfile(user)
 		// data will be whatever the phpscript echo'd
 			var json = jQuery.parseJSON(data);
 			setProfile(json);
+			setPopPics(user);
+		} 
+	});
+}
+
+function setPopPics(user)
+{
+	data = {};
+
+	data.user = user;
+	$.ajax("../bckend/getUserPics.php", //tell it what script to run 
+	{
+		type : "POST", //data type
+		data : data, //actual data
+		success : function(data){ // function that will run if request was successful- data 
+		// data will be whatever the phpscript echo'd
+			var json = jQuery.parseJSON(data);
 		} 
 	});
 }

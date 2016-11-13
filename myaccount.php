@@ -28,8 +28,7 @@
 <center><nav class="home">
     <ul>
     <li><a href="./homepage/home.php">Home</a></li>
-    <li><a href="./gallery.php">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="./logout.php">Logout</a></li>
      <li class="active">Account</li>
   </ul>
 </nav></center>
@@ -43,28 +42,12 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-<?php
-        $user = $_SESSION['logged_on_user'];
-        $pdo=connect();
-        $pdo->query("USE matcha_db");
-        $stmt = $pdo->prepare("SELECT PicID FROM Pictures WHERE Username = :user AND ProfPic = 1");
-        $stmt->bindParam(":user", $user);
-        $stmt->execute();
-        if($stmt->rowCount() != 1)
-        {
-          $str = "//placehold.it/100";
-        }
-        else
-        {
-          $str = $stmt->fetch(PDO::FETCH_COLUMN);
-        }
-        ?>
           <img style="width : 80%" id="profpic" src="//placehold.it/100" alt="Upload a photo!">
           <h6>Upload a different photo...</h6>
 		  <form enctype="multipart/form-data" id="image_upload_form" method="post">
           <input id="image1" type="file" class="form-control">           
           <input type="button" class="form-control" value="Upload Photo" onclick="userUpload()">
-             <input type="button" class="btn btn-default" value="Delete" onclick="">
+             <input type="button" class="btn btn-default" value="Delete" onclick="ProfDelete()">
 		  </form>
         </div>
         <div>

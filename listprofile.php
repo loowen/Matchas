@@ -10,6 +10,7 @@
             && ($data[$i]['Age'] <= $_GET['age_max'] || !$_GET['age_max'])
             && ($data[$i]['FameRating'] >= $_GET['fame_min'] || !$_GET['fame_min'])
             && ($data[$i]['FameRating'] <= $_GET['fame_max'] || !$_GET['fame_max'])
+            && ($data[$i]['image'] != null)
             )
             {
                 echo '
@@ -68,15 +69,15 @@ function extract_users()
     $pref = $stmt->fetch(PDO::FETCH_ASSOC);
     if($pref = 3)
     {
-    $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user");
+    $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio, FameRating FROM `users` WHERE Username != :user");
     }
     elseif($pref = 2)
     {
-        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 2");
+        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio, FameRating FROM `users` WHERE Username != :user AND Gender = 2");
     }
     elseif($pref = 1)
     {
-        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio FROM `users` WHERE Username != :user AND Gender = 1");
+        $stmt = $pdo->prepare("SELECT Username, Firstname, Lastname, Age, Gender, Bio, FameRating FROM `users` WHERE Username != :user AND Gender = 1");
     }
     $stmt->bindParam(":user", $user);
     $stmt->execute();
@@ -88,8 +89,10 @@ function extract_users()
         $stmt->bindParam(":user", $data[$i]['Username']);
         $stmt->execute();
         $img = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($stmt->rowCount() > 0)
+        {
         $data[$i]['image'] = "../" . $img['PicID'];
-        $i++;
+        }
     }
     $i = 0;
     $stmt = $pdo->prepare("SELECT UserLiked, Liker FROM ProfLikes WHERE UserLiked = :user OR Liker = :users ");

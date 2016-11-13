@@ -28,7 +28,11 @@ function deleteIMG()
 			break;
 		}
 	}
+	while (i < 4)
+	{
 	$("#pic"+i).attr("src", null);
+	i++;
+	}
 	data = {};
 	data.src = src;
 	$.ajax("bckend/delIMG.php",
@@ -40,6 +44,30 @@ function deleteIMG()
 			getAccountInfo();
 		}
 	});
+}
+
+function ProfDelete()
+{
+	var src = $("#profpic").attr("src");
+	var i = 0;
+	$("#profpic").attr("src", null);
+	while (i < 4)
+	{
+	$("#pic"+i).attr("src", null);
+	i++;
+	}
+	data = {};
+	data.src = src;
+	$.ajax("bckend/delProfIMG.php",
+	{
+		type : "POST",
+		data : data,
+		success : function(data)
+		{
+			getAccountInfo();
+		}
+	});
+	getAccountInfo();
 }
 
 function getAllPics()

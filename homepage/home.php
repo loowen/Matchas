@@ -34,7 +34,7 @@
 
 <header>
 
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<div class="col-md-12">
             <div class="input-group">
@@ -63,7 +63,7 @@
                                     <label for="contain">Keywords</label>
                                     <input class="form-control" type="text" />
                                   </div>
-                                <!--  <input type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></input> -->
+                                  <input type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></input>
                                   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" onclick="search()"></span></button>
                                 </form>
                             </div>
@@ -75,7 +75,7 @@
           </div>
         </div>
 	</div>
-</div>
+</div> -->
 <br>
 
      <div class="alert alert-info alert-dismissable">

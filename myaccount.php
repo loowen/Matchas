@@ -30,7 +30,6 @@
     <li><a href="./homepage/home.php">Home</a></li>
     <li><a href="./gallery.php">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="../logout.php">Logout</a></li>
      <li class="active">Account</li>
   </ul>
 </nav></center>

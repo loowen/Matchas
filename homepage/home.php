@@ -26,6 +26,7 @@
     <li class="active"><a href="#home">Home</a></li>
     <li><a href="./gallery.php">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="../logout.php">Logout</a></li>
      <li><a href="../myaccount.php">Account</a></li>
   </ul>
 </nav></center>

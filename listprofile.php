@@ -12,8 +12,7 @@
             && ($data[$i]['FameRating'] <= $_GET['fame_max'] || !$_GET['fame_max'])
             )
             {
-                echo'
-
+                echo '
             <div class="container">
     <div class="user-menu-container  ">
         <div class="col-md-7 user-details">

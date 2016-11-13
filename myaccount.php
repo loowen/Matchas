@@ -64,6 +64,7 @@
 		  <form enctype="multipart/form-data" id="image_upload_form" method="post">
           <input id="image1" type="file" class="form-control">           
           <input type="button" class="form-control" value="Upload Photo" onclick="userUpload()">
+             <input type="button" class="btn btn-default" value="Delete" onclick="">
 		  </form>
         </div>
         <div>
@@ -103,11 +104,6 @@
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info" id="personal_div">
-    <!--    <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div> -->
         <h3>Personal info</h3>
         
         <form class="form-horizontal" role="form" method="POST" action="bckend/changes.php">
